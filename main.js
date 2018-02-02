@@ -1,4 +1,5 @@
 const electron = require('electron');
+const path = require('path');
 const app = electron.app; // controls application events
 const BrowserWindow = electron.BrowserWindow; // creates and controls the window
 
@@ -11,18 +12,25 @@ app.on('ready', createWindow);
 function createWindow(){
     // Creates new window + loads associated index.html
     mainWindow = new BrowserWindow({
-        frame: false, 
+        titleBarStyle: 'hidden', 
         width: 750, 
-        height: 750
+        height: 750, 
+        show: false, 
+        icon: path.join(__dirname, 'assets/icons/png/hi2.png')
     /* backgroundColor: '07928d'*/});
     mainWindow.loadURL(`file://${__dirname}/index.html`);
     
     // Dev Tools: Open's chrome V8 dev tools on open
     // mainWindow.webContents.openDevTools();
-    mainWindow.on('closed', function() {
+    mainWindow.once('ready-to-show', () => {
+        mainWindow.show()
+    })
+    
+    mainWindow.on('closed', () => {
         // Dereference mainWindow variable and allow for garbage collection to occur
         mainWindow = null;
     })
+
 }
 
 // app event controls; for typical functionality on opening/closing 
