@@ -1616,13 +1616,13 @@
 	@media screen and (max-width: 480px) {
 
 		html, body {
-			min-width: 320px;
+				: 320px;
 		}
 
 	}
 
 	body {
-		background: #312450;
+		background: rgb(6, 132, 128);
 	}
 
 		body.is-loading *, body.is-loading *:before, body.is-loading *:after {
@@ -2643,7 +2643,7 @@
 /* List */
 
 	ol {
-		list-style: decimal;
+		list-style: none;
 		margin: 0 0 2em 0;
 		padding-left: 1.25em;
 	}
@@ -2653,7 +2653,7 @@
 		}
 
 	ul {
-		list-style: disc;
+		list-style: none;
 		margin: 0 0 2em 0;
 		padding-left: 1em;
 	}
@@ -3534,7 +3534,7 @@
 
 	#sidebar {
 		padding: 2.5em 2.5em 0.5em 2.5em ;
-		background: #312450;
+		background: rgba(10, 186, 181, 0.80);
 		cursor: default;
 		height: 100vh;
 		left: 0;
@@ -3884,36 +3884,12 @@
 
 	#intro {
 		background-attachment: fixed;
-		background-image: url("images/hug.gif");
+		background-image: url('images/michelle_intro.jpg');
 		background-position: top right;
 		background-repeat: no-repeat;
 		background-size: 100% 100%;
+		background-color: rgb(10, 186, 181);
 	}
-
 		#intro p {
-			font-size: 1.25em;
-		}
-
-			@media screen and (max-width: 980px) {
-
-				#intro p br {
-					display: none;
-				}
-
-			}
-
-			@media screen and (max-width: 736px) {
-
-				#intro p {
-					font-size: 1em;
-				}
-
-			}
-
-		@media screen and (max-width: 1280px) {
-
-			#intro {
-				background-attachment: scroll;
-			}
-
+			font-size: 1em;
 		}

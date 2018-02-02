@@ -10,7 +10,11 @@ app.on('ready', createWindow);
 // function that generates application window
 function createWindow(){
     // Creates new window + loads associated index.html
-    mainWindow = new BrowserWindow({width: 1281, height: 800, minWidth: 1281, minHeight: 800});
+    mainWindow = new BrowserWindow({
+        frame: false, 
+        width: 750, 
+        height: 750
+    /* backgroundColor: '07928d'*/});
     mainWindow.loadURL(`file://${__dirname}/index.html`);
     
     // Dev Tools: Open's chrome V8 dev tools on open
