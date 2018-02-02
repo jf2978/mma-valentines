@@ -16,9 +16,9 @@ function createWindow(){
         width: 750, 
         height: 750, 
         show: false, 
-        icon: path.join(__dirname, 'assets/icons/png/hi2.png')
+        icon: path.join(__dirname, 'assets/icons/png/heart.png')
     /* backgroundColor: '07928d'*/});
-    mainWindow.loadURL(`file://${__dirname}/index.html`);
+    mainWindow.loadURL(`file://${__dirname}/index.html`)
     
     // Dev Tools: Open's chrome V8 dev tools on open
     // mainWindow.webContents.openDevTools();
