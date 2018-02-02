@@ -3883,7 +3883,7 @@
 /* Intro */
 
 	#intro {
-		background-attachment: fixed;
+		background-attachment: scroll;
 		background-image: url('images/michelle_intro.jpg');
 		background-position: top right;
 		background-repeat: no-repeat;
