@@ -3886,10 +3886,15 @@
 		background-attachment: scroll;
 		background-image: url('images/michelle_intro.jpg');
 		background-position: top right;
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
 		background-repeat: no-repeat;
 		background-size: 100% 100%;
-		background-color: rgb(10, 186, 181);
+		overflow: auto;
 	}
-		#intro p {
+		#intro p h2 {
+			font-family: "Helvetica";
 			font-size: 1em;
 		}
+	
