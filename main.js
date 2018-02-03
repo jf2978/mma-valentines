@@ -12,8 +12,8 @@ function createWindow(){
     // Creates new window + loads associated index.html
     mainWindow = new BrowserWindow({
         titleBarStyle: 'hidden', 
-        width: 1300,
-        height: 1000,
+        width: 750, 
+        height: 750,
         show: false, 
         icon: path.join(__dirname, 'assets/icons/png/heart.png')});
     mainWindow.loadURL(`file://${__dirname}/index.html`)
