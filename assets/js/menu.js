@@ -5,7 +5,7 @@ function(n) {
  sectionTemplate: '.section-template',
  contentContainer: '#wrapper',
  startSectionMenuItem: '#welcome-menu',
- startSection: '#welcome'
+ startSection: '#welcome-menu'
  },
 
  importSectionsToDOM: function() {
@@ -21,37 +21,37 @@ function(n) {
  setMenuOnClickEvent: function () {
     document.body.addEventListener('click', function (event) {
     if (event.target.dataset.section) {
-        navigation.menu.hideAllSections()
-        navigation.menu.showSection(event)
+        navigation.menu.hideAllSections();
+        navigation.menu.showSection(event);
        }
     })
  },
 
  showSection: function(event) {
-    const sectionId = event.target.dataset.section
-    $('#' + sectionId).show()
-    $('#' + sectionId + ' section').show()
+    const sectionId = event.target.dataset.section;
+    $('#' + sectionId).show();
+    $('#' + sectionId + ' section').show();
  },
 
  showStartSection: function() {
-    $(this.constants.startSectionMenuItem).click()
-    $(this.constants.startSection).show()
-    $(this.constants.startSection + ' section').show()
+    $(this.constants.startSectionMenuItem).click();
+    $(this.constants.startSection).show();
+    $(this.constants.startSection + ' section').show();
  },
 
  hideAllSections: function() {
- $(this.constants.contentContainer + ' section').hide()
+    $(this.constants.contentContainer + ' section').hide();
  },
 
  init: function() {
- this.importSectionsToDOM()
- this.setMenuOnClickEvent()
- this.showStartSection()
- }
+    this.importSectionsToDOM();
+    this.setMenuOnClickEvent();
+    this.showStartSection();
+}
  };
 
  n(function() {
- navigation.menu.init()
+    navigation.menu.init();
  })
 
 }(jQuery);

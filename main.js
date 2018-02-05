@@ -12,8 +12,6 @@ function createWindow(){
     // Creates new window + loads associated index.html
     mainWindow = new BrowserWindow({
         titleBarStyle: 'hidden', 
-        width: 750, 
-        height: 750,
         show: false, 
         icon: path.join(__dirname, 'assets/icons/png/heart.png')});
     mainWindow.loadURL(`file://${__dirname}/index.html`)
@@ -22,6 +20,7 @@ function createWindow(){
     // mainWindow.webContents.openDevTools();
     mainWindow.once('ready-to-show', () => {
         mainWindow.show();
+        mainWindow.maximize();  
     })
 
     mainWindow.on('closed', () => {
