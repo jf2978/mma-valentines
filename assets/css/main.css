@@ -3533,7 +3533,7 @@
 
 	#sidebar {
 		padding: 0.5em;
-		background: rgba(10, 186, 181, 0.26);
+		background: rgba(10, 186, 181, 0.5);
 		cursor: default;
 		height: 100vh;
 		left: 0;
@@ -3908,7 +3908,15 @@
 	}
 
 	#prepano {
-		color: white;
+		background-attachment: local;
+		background-image: url('./images/era.png');
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		background-size: cover;
+		background-repeat: no-repeat;
+		overflow:visible;
+		font-family: "Verdana";
 	}
 
 	.pic {
@@ -3934,15 +3942,21 @@
 		border-radius: 15px;
 	}
 	#groupme {
-		width: 450px;
-		height: 300px;
+		width: 500px;
+		height: 350px;
 	}
 
 	#philandfun {
-		width: 600px;
+		width: 650px;
 		height: 500px;
+		float: left;
 	}
 
+	#points {
+		width: 500px;
+		height: 700px;
+		float: right;
+	}
 
 
 	.pic-3d {
@@ -3963,7 +3977,7 @@
 		position: absolute;
 		width: 100%;
 		height: 100%;
-		background: rgba(44, 62, 80, 0.92);
+		background: rgba(212, 116, 164, 0.90);
 		padding: 10px;
 		text-align: center;
 		-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=($opacity * 100))";
@@ -3973,6 +3987,10 @@
 		opacity: 0;
 		font-size: .8em;
 		font-style: italic;
+	}
+
+	.pic-caption p{
+		margin: 50px;
 	}
 
 	.pic-image {
