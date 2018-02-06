@@ -1615,9 +1615,9 @@
 
 	@media screen and (max-width: 480px) {
 
-		html, body {
+		/*html, body {
 				: 320px;
-		}
+		}*/
 
 	}
 
@@ -1900,7 +1900,7 @@
 		letter-spacing: 0.25em;
 		line-height: 4.75em;
 		outline: 0;
-		padding: 0 3.75em;
+		padding: 0 4.75em;
 		position: relative;
 		text-align: center;
 		text-decoration: none;
@@ -3910,7 +3910,7 @@
 
 	#prepano {
 		background-attachment: local;
-		background-image: url('./images/wine-pink2.png');
+		background-image: url('./images/wine-pink.png');
 		-webkit-background-size: cover;
 		-moz-background-size: cover;
 		-o-background-size: cover;
@@ -3936,15 +3936,13 @@
 	}
 
 	#peek-background {
-		display: block;
-		margin-left:auto;
-		margin-right: auto;
+		margin-left:300px;
 	}
 
 	.pic {
 		position: relative;
 		overflow: hidden;
-		margin: 15px;
+		margin: 30px 15px 15px 15px;
 		display: inline-block;
 		-webkit-animation: anima 2s;
 		-moz-animation: anima 2s;
@@ -3967,9 +3965,14 @@
 		width: 500px;
 		height: 350px;
 	}
-
+	
 	#philandfun {
 		width: 500px;
+		height: 350px;
+	}
+
+	#points {
+		width: 1000px;
 		height: 350px;
 	}
 
