@@ -3219,7 +3219,7 @@
 	}
 
 		.wrapper > .inner {
-			padding: 5em 5em 3em 5em ;
+			padding: 2em 5em 3em 5em ;
 			max-width: 100%;
 			width: 75em;
 		}
@@ -3904,10 +3904,12 @@
 	}
 	
 	#intro p {
-		color: #ffffff;
+		color: rgba(255, 255, 255, 0.85);
 		font-size:.85em;
+		text-align:justify;
 	}
 
+/* Pre-pano */
 	#prepano {
 		background-attachment: local;
 		background-image: url('./images/wine-pink.png');
@@ -3932,11 +3934,40 @@
 	#prepano-header p{
 		font-size:.85em;
 		margin:40px;
-		color:#ffffff;
+		color:rgba(255, 255, 255, 0.85);
+		text-align:justify;
 	}
 
 	#peek-background {
 		margin-left:300px;
+	}
+
+/* Pano */
+	#pano {
+		background-attachment: local;
+		background-image: url('./images/pano.jpg');
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		background-size: cover;
+		background-repeat: no-repeat;
+		overflow:visible;
+		font-family: "Verdana";
+	}
+	
+	#pano-header h2 {
+		text-align:center;
+		font-style: italic;
+		font-size: 2em;
+		color:rgb(241, 156, 156);
+		text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+	}
+	
+	#pano-header p {
+		text-align:justify;
+		color: rgba(255, 255, 255, 0.85);
+		font-size:.85em;
+		margin: 50px 150px;
 	}
 
 	.pic {
