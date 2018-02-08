@@ -3973,8 +3973,8 @@
 	.pic {
 		position: relative;
 		overflow: hidden;
-		margin: 30px 15px 15px 15px;
 		display: inline-block;
+		margin:auto;
 		-webkit-animation: anima 2s;
 		-moz-animation: anima 2s;
 		-o-animation: anima 2s;
@@ -3995,16 +3995,19 @@
 	#groupme {
 		width: 500px;
 		height: 350px;
+		margin: 20px;
 	}
 	
 	#philandfun {
 		width: 500px;
 		height: 350px;
+		margin: 20px 15px 20px 10px;
 	}
 
 	#points {
 		width: 1000px;
 		height: 350px;
+		margin: 20px 30px 20px 40px;
 	}
 
 	.pic-3d {
