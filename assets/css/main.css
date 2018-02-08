@@ -3945,7 +3945,7 @@
 /* Pano */
 	#pano {
 		background-attachment: local;
-		background-image: url('./images/pano.jpg');
+		background-image: url('./images/pano_test.jpg');
 		-webkit-background-size: cover;
 		-moz-background-size: cover;
 		-o-background-size: cover;
@@ -3953,6 +3953,13 @@
 		background-repeat: no-repeat;
 		overflow:visible;
 		font-family: "Verdana";
+	}
+	#pano-header{
+		box-sizing: border-box;
+		width:750px;
+		height: 350px;
+		margin:auto;
+		margin-bottom:250px;
 	}
 	
 	#pano-header h2 {
@@ -3964,10 +3971,14 @@
 	}
 	
 	#pano-header p {
+		box-sizing:inherit;
+		width:inherit;
+		height:inherit;
 		text-align:justify;
 		color: rgba(255, 255, 255, 0.85);
 		font-size:.85em;
-		margin: 50px 150px;
+		margin: inherit;
+		opacity:.35;
 	}
 
 	.pic {
