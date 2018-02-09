@@ -3971,14 +3971,17 @@
 	}
 	
 	#pano-header p {
-		box-sizing:inherit;
-		width:inherit;
-		height:inherit;
+		box-sizing: content-box;
 		text-align:justify;
 		color: rgba(255, 255, 255, 0.85);
 		font-size:.85em;
 		margin: inherit;
-		opacity:.35;
+		opacity:.25;
+	}
+
+	#pano-header p:hover {
+		opacity: 1;
+		font-weight: 500;
 	}
 
 	.pic {
