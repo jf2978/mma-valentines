@@ -3953,10 +3953,10 @@
 .slider {
 	position: absolute;
 	cursor: pointer;
-	top: 20px;
-	left: 30px;
-	right: -30px;
-	bottom: -20px;
+	top: 55px;
+	left: 40px;
+	right: -40px;
+	bottom: -55px;
 	background-color: #ccc;
 	-webkit-transition: .4s;
 	transition: .4s;
@@ -3966,10 +3966,10 @@
 .slider:before {
 	position: absolute;
 	content: "";
-	height: 26px;
-	width: 26px;
-	left: 4px;
-	bottom: 4px;
+	height:28px;
+	width: 28px;
+	left: 3px;
+	bottom: 3px;
 	background-color: white;
 	-webkit-transition: .4s;
 	transition: .4s;
@@ -3978,14 +3978,23 @@
 /* toggled state */
 input:checked + .slider {
 	background-color:rgb(241, 156, 156);
+	opacity:.3;
+}
+
+input:checked ~ .toggle-label {
+	opacity:0;
+}
+
+input:checked .pic{
+	opacity:0.2;
 }
 
 /* 'focus' state, like when clicking into a text box */
 input:focus + .slider {
-	box-shadow: 0 0 1px #2196f3;
+	box-shadow: 0 0 1px rgb(241, 156, 156);
 }
 
-/* distance circle moves upon toggle */
+/* for input that is now checked followed by sliders in the before state */
 input:checked + .slider:before {
 	-webkit-transform: translateX(26px);
 	-ms-transform: translateX(26px);
@@ -4000,6 +4009,16 @@ input:checked + .slider:before {
 /* Radius of the inner circle */
 .slider.round:before {
 	border-radius: 50%;
+}
+
+.toggle-label {
+	position: absolute;
+	font-size:12px;
+	box-sizing: content-box;
+	top: 90px;
+	left: 40px;
+	white-space: nowrap;
+	font-style:italic;
 }
   
 /* Pano */
@@ -4048,7 +4067,7 @@ input:checked + .slider:before {
 	position: relative;
 	overflow: hidden;
 	display: inline-block;
-	margin:auto;
+	margin: auto;
 	-webkit-animation: anima 2s;
 	-moz-animation: anima 2s;
 	-o-animation: anima 2s;
@@ -4066,6 +4085,7 @@ input:checked + .slider:before {
 	box-sizing: border-box;	
 	border-radius: 15px;
 }
+
 #groupme {
 	width: 500px;
 	height: 350px;
