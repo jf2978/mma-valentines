@@ -14,6 +14,9 @@ function createWindow(){
         titleBarStyle: 'hidden', 
         show: false, 
         icon: path.join(__dirname, 'assets/icons/png/heart.png')});
+        webPreferences: {
+            nodeIntegration:false
+        }
     mainWindow.loadURL(`file://${__dirname}/index.html`)
     
     // Dev Tools: Open's chrome V8 dev tools on open
@@ -28,7 +31,6 @@ function createWindow(){
         mainWindow = null;
     })
     require('./menu/mainmenu.js');
-
 }
 
 // app event controls; for typical functionality on opening/closing 
@@ -43,6 +45,4 @@ app.on('activate', function () {
       createWindow()
     }
 })
-
-
 

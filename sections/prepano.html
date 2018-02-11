@@ -1,3 +1,4 @@
+
 <template class="section-template">
         <section id="prepano" class="wrapper style2 spotlights">
                 <label class="switch">
@@ -5,6 +6,21 @@
                         <span class="slider round"></span>
                         <span class="toggle-label"> See Bougie Background </span>
                 </label>
+                <script>
+                        console.log($("toggle").is(":checked"));
+                        var toggle = false;
+                        var pics = $(document.getElementsByClassName("pic"));
+                        console.log(pics);
+                        document.getElementById("toggle").addEventListener("click", function(){
+                                if(toggle){
+                                        pics.fadeTo("slow", 1);
+                                        toggle = false;
+                                }else{
+                                        pics.fadeTo("slow", 0);
+                                        toggle = true;
+                                }
+                        });
+                </script>
                 <div id="prepano-header">
                         <h2>Pre-Panorama</h2>
                         <p>From the day we got into Descartes' Meditations and "Excellent Sheep" in a ShakeShack at Grand Central, I got this feeling that I had stumbled on someone special that I had initially misjudged; I wanted to really get to know you. Starting from the moment I finally had the courage to message you directly, this section of the app is dedicated to our pre-pano days before we both "knew" and before the only places we had seen together were those in the radius of 415 Madison Ave. </p>

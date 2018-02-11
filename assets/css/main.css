@@ -3985,10 +3985,6 @@ input:checked ~ .toggle-label {
 	opacity:0;
 }
 
-input:checked .pic{
-	opacity:0.2;
-}
-
 /* 'focus' state, like when clicking into a text box */
 input:focus + .slider {
 	box-shadow: 0 0 1px rgb(241, 156, 156);
@@ -4035,7 +4031,7 @@ input:checked + .slider:before {
 }
 #pano-header{
 	box-sizing: border-box;
-	width:750px;
+	width:825px;
 	height: 350px;
 	margin:auto;
 	margin-bottom:250px;
@@ -4055,7 +4051,7 @@ input:checked + .slider:before {
 	color: rgba(255, 255, 255, 0.85);
 	font-size:.85em;
 	margin: inherit;
-	opacity:.4;
+	opacity:.3;
 }
 
 #pano-header p:hover {
