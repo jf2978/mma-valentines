@@ -4019,7 +4019,7 @@ input:checked + .slider:before {
   
 /* Pano */
 #pano {
-	background-attachment: local;
+	background-attachment: locals;
 	background-image: url('./images/pano_test.jpg');
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
@@ -4050,7 +4050,6 @@ input:checked + .slider:before {
 	text-align:justify;
 	color: rgb(255, 255, 255);
 	font-size:.85em;
-	margin: inherit;
 	opacity:.1;
 }
 
