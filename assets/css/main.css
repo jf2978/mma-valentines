@@ -4048,10 +4048,10 @@ input:checked + .slider:before {
 #pano-header p {
 	box-sizing: content-box;
 	text-align:justify;
-	color: rgba(255, 255, 255, 0.85);
+	color: rgb(255, 255, 255);
 	font-size:.85em;
 	margin: inherit;
-	opacity:.3;
+	opacity:.1;
 }
 
 #pano-header p:hover {

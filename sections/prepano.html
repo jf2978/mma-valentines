@@ -7,10 +7,8 @@
                         <span class="toggle-label"> See Bougie Background </span>
                 </label>
                 <script>
-                        console.log($("toggle").is(":checked"));
                         var toggle = false;
                         var pics = $(document.getElementsByClassName("pic"));
-                        console.log(pics);
                         document.getElementById("toggle").addEventListener("click", function(){
                                 if(toggle){
                                         pics.fadeTo("slow", 1);
