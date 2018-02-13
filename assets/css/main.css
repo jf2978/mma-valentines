@@ -3907,6 +3907,7 @@
 		color: rgba(255, 255, 255, 0.85);
 		font-size:.85em;
 		text-align:justify;
+		text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.85);
 	}
 
 /* Pre-pano */
@@ -3936,6 +3937,7 @@
 		margin:40px;
 		color:rgba(255, 255, 255, 0.85);
 		text-align:justify;
+		text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.85);
 	}
 
 /* The switch - the box around the slider */
@@ -4038,6 +4040,7 @@ input:checked + .slider:before {
 }
 
 #pano-header h2 {
+	margin-bottom:45px;
 	text-align:center;
 	font-style: italic;
 	font-size: 2em;
@@ -4051,7 +4054,7 @@ input:checked + .slider:before {
 	color: rgb(255, 255, 255);
 	font-size:.85em;
 	opacity:.4;
-	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.85);
+	text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.85);
 }
 
 #pano-header p:hover {
@@ -4430,9 +4433,14 @@ a, a:hover, .pic .pic-image, .pic-caption, .pic:hover .pic-caption, .pic:hover i
 	box-shadow: 0 0 0 3px #fff, 0 0 0 5px #ddd, 0 0 0 10px #fff, 0 0 2px 10px #eee;
 }
 
+/*.mySlides:hover{
+	
+}*/
+
 .finsta{
 	width: 100px;
 	height: 125px;
+	cursor:pointer;
 }
 
 #finsta{
@@ -4444,6 +4452,9 @@ a, a:hover, .pic .pic-image, .pic-caption, .pic:hover .pic-caption, .pic:hover i
 	background-size: cover;
 	background-repeat: no-repeat;
 	overflow: visible;
+}
+#finsta-header{
+	font-family: "Verdana";
 }
 
 #finsta-header h2{
@@ -4459,8 +4470,38 @@ a, a:hover, .pic .pic-image, .pic-caption, .pic:hover .pic-caption, .pic:hover i
 	margin:40px;
 	color:rgba(255, 255, 255, 0.85);
 	text-align:justify;
+	text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.85);
 }
 
+#now{
+	background-attachment: local;
+	background-image: url('./images/final_bg.jpg');
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	background-repeat: no-repeat;
+	overflow: visible;
+}
+#now-header{
+	font-family: "Verdana";
+}
+
+#now-header h2{
+	font-style: italic;
+	font-size: 2em;
+	color:rgb(241, 156, 156);
+	text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+	text-align:center;
+}
+
+#now-header p{
+	font-size:.85em;
+	margin:40px;
+	color:rgba(255, 255, 255, 0.85);
+	text-align:justify;
+	text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.85);
+}
 
 
 		
