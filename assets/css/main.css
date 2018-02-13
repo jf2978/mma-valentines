@@ -2654,7 +2654,7 @@
 
 	ul {
 		list-style: none;
-		margin: 0 0 2em 0;
+		margin: 0 0 0 0;
 		padding-left: 1em;
 	}
 
@@ -3533,7 +3533,7 @@
 
 	#sidebar {
 		padding: 0.5em;
-		background: rgb(254, 190, 132);
+		background: rgb(241, 156, 156);
 		cursor: default;
 		height: 100vh;
 		left: 0;
@@ -3544,6 +3544,8 @@
 		top: 0;
 		width: 12em;
 		z-index: 10000;
+		/*pink rgb(241, 156, 156)*/
+		/*red rgb(189, 16, 16);*/
 	}
 
 		#sidebar > .inner {
@@ -3746,9 +3748,9 @@
 			-ms-transition: color 0.2s ease;
 			transition: color 0.2s ease;
 			border: 0;
-			color: rgba(255, 255, 255, 0.35);
+			color: rgba(255, 255, 255, 0.70);
 			display: block;
-			font-size: 0.65em;
+			font-size: 0.75em;
 			font-weight: bold;
 			letter-spacing: 0.25em;
 			line-height: 1.75;
@@ -3771,15 +3773,15 @@
 
 			/* side bar before color */
 			#sidebar nav a:before {
-				background: #AD7C4B;
+				background: rgba(202, 198, 198, 0.75);
 			}
 
 			/* sidebar after color + effect */
 			#sidebar nav a:after {
-				background-image: -moz-linear-gradient(to right,#012e2d, rgb(241, 156, 156));
-				background-image: -webkit-linear-gradient(to right, #012e2d, #0cf3ec);
-				background-image: -ms-linear-gradient(to right, #012e2d, #0cf3ec);
-				background-image: linear-gradient(to right, #9E6668 , rgb(254, 155, 155));
+				background-image: -moz-linear-gradient(to right, #E09397 , rgb(238, 24, 24));
+				background-image: -webkit-linear-gradient(to right, #E09397 , rgb(238, 24, 24));
+				background-image: -ms-linear-gradient(to right, #E09397 , rgb(238, 24, 24));
+				background-image: linear-gradient(to right, #E09397 , rgb(238, 24, 24));
 				-moz-transition: max-width 0.2s ease;
 				-webkit-transition: max-width 0.2s ease;
 				-ms-transition: max-width 0.2s ease;
@@ -3795,6 +3797,7 @@
 			/* sidebar text color once slected */
 			#sidebar nav a.active {
 				color: #ffffff;
+				text-shadow: -.5px 0 rgba(0, 0, 0, 0.25), 0 .5px rgba(0, 0, 0, 0.25), .5px 0 rgba(0, 0, 0, 0.25), 0 -.5px rgba(0, 0, 0, 0.25);
 			}
 
 			#sidebar nav a.active:after {
@@ -4082,7 +4085,7 @@ input:checked + .slider:before {
 	-o-box-sizing: border-box;
 	-ms-box-sizing: border-box;
 	box-sizing: border-box;	
-	border-radius: 15px;
+	border-radius: 8px;
 }
 
 #groupme {
@@ -4525,6 +4528,19 @@ a, a:hover, .pic .pic-image, .pic-caption, .pic:hover .pic-caption, .pic:hover i
 	text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.85);
 }
 
+#pooja{
+	margin-left: 350px;
+}
+#finsta-truth{
+	margin-left: 400px;
+}
+#but-now{
+	margin-top: 40px;
+    margin-left: 350px;
+}
 
-		
+#heart-sidebar{
+	width:175px;
+	height:150px;
+}
 		
