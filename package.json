@@ -1,24 +1,56 @@
 {
   "name": "mma-valentines",
-  "productName": "Valentine's Day 2018",
   "version": "1.0.0",
   "description": "For my best food friend - Michelle",
   "main": "main.js",
+  "repository": {
+    "url": "https://github.com/jf2978/mma-valentines"
+  },
   "dependencies": {
     "rcedit": "^0.9.0",
     "wine": "^0.9.8"
   },
   "devDependencies": {
-    "electron": "^1.7.12",
-    "electron-builder": "^19.55.3",
-    "electron-packager": "^10.1.2"
+    "electron": "latest",
+    "electron-builder": "latest"
   },
   "scripts": {
-    "test": "echo \"Hi\"",
-    "package-mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --icon=assets/icons/mac/heart.icns --prune=true --out=release-builds",
-    "package-win": "electron-packager . mma-valentines --overwrite --asar=true --platform=win32 --arch=ia32 --icon=assets/icons/win/heart.ico --prune=true --out=release-builds --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=\"Valentine's Day 2018\"",
-    "package-linux": "electron-packager . mma-valentines --overwrite --asar=true --platform=linux --arch=x64 --icon=assets/icons/png/heart.png --prune=true --out=release-builds"
+    "postinstall": "install-app-deps",
+    "start": "npm install && electron ./app",
+    "pack": "build --dir",
+    "dist": "build"
   },
-  "author": "Jeff",
+  "build": {
+    "appId": "com.electron.mma",
+    "productName": "Valentine's Day 2018",
+    "copyright": "Copyright © year Jeff",
+    "dmg": {
+      "contents": [
+        {
+          "x": 110,
+          "y": 150
+        },
+        {
+          "x": 240,
+          "y": 150,
+          "type": "link",
+          "path": "/Applications"
+        }
+      ]
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb"
+      ]
+    },
+    "win": {
+      "target": "NSIS"
+    }
+  },
+  "author": {
+  "name":"Jeff",
+  "email": "jf2978@columbia.edu"
+  },
   "license": "ISC"
 }
