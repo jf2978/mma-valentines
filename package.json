@@ -16,36 +16,17 @@
   },
   "scripts": {
     "postinstall": "install-app-deps",
-    "start": "npm install && electron ./app",
+    "start": "electron .",
     "pack": "build --dir",
     "dist": "build"
   },
   "build": {
-    "appId": "com.electron.mma",
+    "appId": "com.electron.mma-valentines",
     "productName": "Valentine's Day 2018",
     "copyright": "Copyright © year Jeff",
-    "dmg": {
-      "contents": [
-        {
-          "x": 110,
-          "y": 150
-        },
-        {
-          "x": 240,
-          "y": 150,
-          "type": "link",
-          "path": "/Applications"
-        }
-      ]
-    },
-    "linux": {
-      "target": [
-        "AppImage",
-        "deb"
-      ]
-    },
     "win": {
-      "target": "NSIS"
+      "target": "NSIS", 
+      "icon": "build/icon.ico"
     }
   },
   "author": {
