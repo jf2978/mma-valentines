@@ -4449,7 +4449,7 @@ a, a:hover, .pic .pic-image, .pic-caption, .pic:hover .pic-caption, .pic:hover i
   
   .text {
 	color: white;
-	font-size: 20px;
+	font-size: 16px;
 	position: absolute;
 	top: 50%;
 	left: 50%;
@@ -4457,6 +4457,8 @@ a, a:hover, .pic .pic-image, .pic-caption, .pic:hover .pic-caption, .pic:hover i
 	-ms-transform: translate(-50%, -50%);
 	text-align: center;
 	opacity:1;
+	font-style: italic;
+	font-family: Verdana;
   }
 
 .overlay:hover{
