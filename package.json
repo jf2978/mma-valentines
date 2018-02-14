@@ -12,10 +12,9 @@
   },
   "devDependencies": {
     "electron": "latest",
-    "electron-builder": "latest"
+    "electron-builder": "^20.0.4"
   },
   "scripts": {
-    "postinstall": "install-app-deps",
     "start": "electron .",
     "pack": "build --dir",
     "dist": "build"
@@ -25,13 +24,13 @@
     "productName": "Valentine's Day 2018",
     "copyright": "Copyright © year Jeff",
     "win": {
-      "target": "NSIS", 
+      "target": "NSIS",
       "icon": "build/icon.ico"
     }
   },
   "author": {
-  "name":"Jeff",
-  "email": "jf2978@columbia.edu"
+    "name": "Jeff",
+    "email": "jf2978@columbia.edu"
   },
   "license": "ISC"
 }
