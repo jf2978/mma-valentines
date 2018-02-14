@@ -14,10 +14,6 @@
     "electron": "latest",
     "electron-builder": "^20.0.4"
   },
-  "optionalDependencies": {
-    "7zip-bin-mac": "latest",
-    "7zip-bin-linux": "latest"
-  },
   "scripts": {
     "postinstall": "install-app-deps",
     "start": "electron . --enable-logging",
@@ -32,6 +28,11 @@
     "win": {
       "target": "NSIS",
       "icon": "build/icon.ico"
+    }, 
+    "mac": {
+      "target":"dmg", 
+      "category": "public.app-category.lifestyle", 
+      "icon": "build/icon.icns"
     }
   },
   "author": {
