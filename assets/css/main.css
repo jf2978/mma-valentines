@@ -3750,7 +3750,7 @@
 			border: 0;
 			color: rgba(255, 255, 255, 0.70);
 			display: block;
-			font-size: 0.75em;
+			font-size: 0.70em;
 			font-weight: bold;
 			letter-spacing: 0.25em;
 			line-height: 1.75;
@@ -4503,7 +4503,7 @@ a, a:hover, .pic .pic-image, .pic-caption, .pic:hover .pic-caption, .pic:hover i
 
 #now{
 	background-attachment: local;
-	background-image: url('./images/final_bg.jpg');
+	background-image: url('./images/final_bg-min.jpg');
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
