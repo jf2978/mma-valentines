@@ -2859,37 +2859,33 @@ input:checked + .slider:before {
 	-o-box-sizing: border-box;
 	-ms-box-sizing: border-box;
 	box-sizing: border-box;	
-	border-radius: 8px;
+	border-radius: 0px;
 }
 
 #groupme {
-	width: 500px;
-	height: 350px;
+	max-width: 45%;
 	margin: 20px;
 }
 
 #philandfun {
-	width: 500px;
-	height: 350px;
-	margin: 20px 12px 20px 10px;
+	max-width: 45%;
+	margin: 10px;
 }
 
 #points {
-	width: 1000px;
-	height: 350px;
+	max-width: 90%;
 	margin: 20px 30px 20px 40px;
 }
 
 #whetherornot {
-	width: 500px;
-	height: 375px;
-	margin: 20px 25px 20px 15px;
+	max-width: 50%;
+	margin-left: 20px;
+	margin-bottom: 30px;
 }
 
 #rob {
-	width: 400px;
-	height: 375px;
-	margin: 20px 30px 20px 60px;
+	max-width: 40%;
+	margin-left: 20px;
 }
 
 #rob p {
@@ -2930,7 +2926,7 @@ input:checked + .slider:before {
 
 .pic-caption p{
 	margin: 25px;
-	font-size: .7em;
+	font-size: .9vmax;
 }
 
 .pic-image {
@@ -2948,7 +2944,7 @@ input:checked + .slider:before {
 
 .pic-title {
 	font-family: "Verdana";
-	font-size: 1.2em;
+	font-size: 1.75vmax;
 	text-align: center;
 }
 

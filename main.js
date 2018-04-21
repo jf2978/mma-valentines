@@ -11,8 +11,10 @@ app.on('ready', createWindow);
 function createWindow(){
     // Creates new window + loads associated index.html
     mainWindow = new BrowserWindow({
-        titleBarStyle: 'hidden', 
-        minwidth: 1000,
+        titleBarStyle: 'hidden',
+        width: 1280, 
+        height:800, 
+        minwidth: 1050,
         minHeight: 750, 
         show: false, 
         icon: path.join(__dirname, 'assets/icons/png/heart.png')});
@@ -25,7 +27,6 @@ function createWindow(){
     // mainWindow.webContents.openDevTools();
 
     mainWindow.once('ready-to-show', () => {
-        mainWindow.maximize();
         mainWindow.show();
         })
 
