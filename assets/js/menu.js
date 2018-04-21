@@ -34,7 +34,6 @@ function(n) {
  // Uses jquery to directly show section by appending # to keyname
  showSection: function(event) {
     const sectionId = event.target.dataset.section;
-    console.log('#' + sectionId + ' showed');
     $('#' + sectionId).show(); // displays entire html with section id
     $('#' + sectionId + ' section').show(); // displays section element with that id
  },
@@ -42,9 +41,7 @@ function(n) {
  showStartSection: function() {
     $(this.constants.startSectionMenuItem).click();
     navigation.menu.hideAllSections();
-    console.log(this.constants.startSectionMenuItem + ' clicked');
     $(this.constants.startSection).show();
-    console.log(this.constants.startSection + ' showed');
     $(this.constants.startSection + ' section').show();
  },
 
