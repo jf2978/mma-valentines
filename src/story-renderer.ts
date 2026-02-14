@@ -1,81 +1,243 @@
 import { timeline } from './timeline-data'
 import type { TimelineEntry } from './timeline-data'
 
-const BG_COLORS = [
-  'var(--color-accent-purple)',
-  'var(--color-blue-purple)',
-  'var(--color-magenta)',
-]
+type Season = 'Winter' | 'Spring' | 'Summer' | 'Fall'
 
-function entryId(entry: TimelineEntry): string {
-  return `story-${entry.year}-${entry.date}`
+interface SeasonInfo {
+  season: Season
+  order: number
 }
 
-function formatDate(date: string): string {
-  const [month, day, year] = date.split('-')
-  const d = new Date(Number(year), Number(month) - 1, Number(day))
-  return d.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })
+interface SeasonGroup {
+  year: number
+  season: Season
+  order: number
+  images: string[]
+  date: string
+  title: string
+  caption: string
 }
 
-function navLabel(entry: TimelineEntry): string {
-  const [month] = entry.date.split('-')
-  const d = new Date(2000, Number(month) - 1)
-  return d.toLocaleDateString('en-US', { month: 'long' })
+function getSeasonInfo(date: string): SeasonInfo {
+  const month = Number(date.split('-')[0])
+  if (month <= 2) return { season: 'Winter', order: 0 }
+  if (month <= 5) return { season: 'Spring', order: 1 }
+  if (month <= 8) return { season: 'Summer', order: 2 }
+  if (month <= 11) return { season: 'Fall', order: 3 }
+  return { season: 'Winter', order: 4 }
 }
 
-function createPageSection(entry: TimelineEntry, colorIndex: number): HTMLElement {
-  const section = document.createElement('section')
-  section.id = entryId(entry)
-  section.className = 'wrapper fullscreen story-page'
-
-  const isSingleImage = entry.images.length === 1
-
-  if (isSingleImage) {
-    section.style.backgroundImage = `url('${entry.images[0]}')`
-    section.style.backgroundSize = 'cover'
-    section.style.backgroundPosition = 'center'
-    section.style.backgroundRepeat = 'no-repeat'
-  } else {
-    section.style.backgroundColor = BG_COLORS[colorIndex % BG_COLORS.length]
+function groupBySeason(entries: TimelineEntry[]): SeasonGroup[] {
+  const yearGroups = new Map<number, TimelineEntry[]>()
+  for (const entry of entries) {
+    const group = yearGroups.get(entry.year) ?? []
+    group.push(entry)
+    yearGroups.set(entry.year, group)
   }
+
+  const seasonGroups: SeasonGroup[] = []
+
+  for (const [year, yearEntries] of yearGroups) {
+    const orderMap = new Map<number, TimelineEntry[]>()
+    for (const entry of yearEntries) {
+      const info = getSeasonInfo(entry.date)
+      const group = orderMap.get(info.order) ?? []
+      group.push(entry)
+      orderMap.set(info.order, group)
+    }
+
+    const orders = Array.from(orderMap.keys()).sort((a, b) => a - b)
+    for (const order of orders) {
+      const group = orderMap.get(order)!
+      const info = getSeasonInfo(group[0].date)
+
+      seasonGroups.push({
+        year,
+        season: info.season,
+        order,
+        images: group.flatMap((e) => e.images),
+        date: group[0].date,
+        title: group[0].title,
+        caption: group[0].caption,
+      })
+    }
+  }
+
+  return seasonGroups
+}
+
+function groupId(group: SeasonGroup): string {
+  const base = `story-${group.year}-${group.season.toLowerCase()}`
+  return group.order === 4 ? `${base}-dec` : base
+}
+
+function navLabel(group: SeasonGroup, allGroups: SeasonGroup[]): string {
+  const duplicates = allGroups.filter((g) => g.season === group.season)
+  if (duplicates.length > 1) {
+    const month = Number(group.date.split('-')[0])
+    return new Date(2000, month - 1).toLocaleDateString('en-US', { month: 'long' })
+  }
+  return group.season
+}
+
+const SLIDE_PERCENT = 78
+const GAP_PERCENT = 2.5
+
+function createCarousel(
+  images: string[],
+  altText: string,
+  onSlideChange?: (src: string) => void,
+): HTMLElement {
+  const carousel = document.createElement('div')
+  carousel.className = 'story-carousel'
+
+  const track = document.createElement('div')
+  track.className = 'story-carousel-track'
+
+  for (const src of images) {
+    const slide = document.createElement('div')
+    slide.className = 'story-carousel-slide'
+    const img = document.createElement('img')
+    img.src = src
+    img.alt = altText
+    img.loading = 'lazy'
+    slide.appendChild(img)
+    track.appendChild(slide)
+  }
+
+  carousel.appendChild(track)
+
+  const prevBtn = document.createElement('button')
+  prevBtn.className = 'story-carousel-prev'
+  prevBtn.innerHTML = '&#8249;'
+  prevBtn.type = 'button'
+  carousel.appendChild(prevBtn)
+
+  const nextBtn = document.createElement('button')
+  nextBtn.className = 'story-carousel-next'
+  nextBtn.innerHTML = '&#8250;'
+  nextBtn.type = 'button'
+  carousel.appendChild(nextBtn)
+
+  const dots = document.createElement('div')
+  dots.className = 'story-carousel-dots'
+  for (let i = 0; i < images.length; i++) {
+    const dot = document.createElement('button')
+    dot.className = 'story-carousel-dot'
+    dot.type = 'button'
+    if (i === 0) dot.classList.add('active')
+    dot.dataset.index = String(i)
+    dots.appendChild(dot)
+  }
+  carousel.appendChild(dots)
+
+  let currentIndex = 0
+  const totalSlides = images.length
+  const slides = track.querySelectorAll<HTMLElement>('.story-carousel-slide')
+
+  function updateLayout() {
+    const containerWidth = carousel.clientWidth
+    if (containerWidth === 0) return
+
+    const slideWidth = containerWidth * (SLIDE_PERCENT / 100)
+    const gap = containerWidth * (GAP_PERCENT / 100)
+
+    slides.forEach((slide) => {
+      slide.style.width = `${slideWidth}px`
+      slide.style.marginRight = `${gap}px`
+    })
+
+    const centerOffset = (containerWidth - slideWidth) / 2
+    const shift = currentIndex * (slideWidth + gap) - centerOffset
+    track.style.transform = `translateX(${-shift}px)`
+  }
+
+  function goToSlide(index: number) {
+    currentIndex = ((index % totalSlides) + totalSlides) % totalSlides
+    updateLayout()
+    slides.forEach((slide, i) => {
+      slide.classList.toggle('active', i === currentIndex)
+    })
+    dots.querySelectorAll('.story-carousel-dot').forEach((d, i) => {
+      d.classList.toggle('active', i === currentIndex)
+    })
+    onSlideChange?.(images[currentIndex])
+  }
+
+  prevBtn.addEventListener('click', () => goToSlide(currentIndex - 1))
+  nextBtn.addEventListener('click', () => goToSlide(currentIndex + 1))
+  dots.querySelectorAll('.story-carousel-dot').forEach((dot) => {
+    dot.addEventListener('click', () => {
+      goToSlide(Number((dot as HTMLElement).dataset.index))
+    })
+  })
+
+  const resizeObserver = new ResizeObserver(() => updateLayout())
+  resizeObserver.observe(carousel)
+
+  // Initial layout after DOM insertion
+  slides[0]?.classList.add('active')
+  requestAnimationFrame(() => updateLayout())
+
+  return carousel
+}
+
+function createPageSection(group: SeasonGroup, isReversed: boolean): HTMLElement {
+  const section = document.createElement('section')
+  section.id = groupId(group)
+  section.className = 'wrapper fullscreen story-page'
+  if (isReversed) section.classList.add('story-page--reverse')
+
+  const isSingleImage = group.images.length === 1
 
   const caption = document.createElement('span')
   caption.className = 'bg-caption'
-  caption.textContent = formatDate(entry.date)
+  caption.textContent = `${group.season} ${group.year}`
   section.appendChild(caption)
+
+  const bgOverlay = document.createElement('div')
+  bgOverlay.className = 'story-page-bg'
+  bgOverlay.style.backgroundImage = `url('${group.images[0]}')`
+  section.appendChild(bgOverlay)
 
   const inner = document.createElement('div')
   inner.className = 'inner'
 
+  const textCol = document.createElement('div')
+  textCol.className = 'story-page-text'
+
   const title = document.createElement('h2')
-  title.textContent = entry.title
-  inner.appendChild(title)
+  title.textContent = group.title
+  textCol.appendChild(title)
 
   const desc = document.createElement('p')
-  desc.textContent = entry.caption
-  inner.appendChild(desc)
+  desc.textContent = group.caption
+  textCol.appendChild(desc)
 
-  if (!isSingleImage) {
-    const cols = entry.images.length <= 2 ? 2 : entry.images.length <= 4 ? 2 : 3
-    const gallery = document.createElement('div')
-    gallery.className = `story-gallery story-gallery--cols-${cols}`
+  const mediaCol = document.createElement('div')
+  mediaCol.className = 'story-page-media'
 
-    for (const src of entry.images) {
-      const imgEl = document.createElement('img')
-      imgEl.src = src
-      imgEl.alt = entry.title
-      imgEl.loading = 'lazy'
-      gallery.appendChild(imgEl)
-    }
-
-    inner.appendChild(gallery)
+  if (isSingleImage) {
+    const img = document.createElement('img')
+    img.src = group.images[0]
+    img.alt = group.title
+    img.loading = 'lazy'
+    img.className = 'story-page-single-img'
+    mediaCol.appendChild(img)
+  } else {
+    const carousel = createCarousel(group.images, group.title, (src) => {
+      bgOverlay.style.backgroundImage = `url('${src}')`
+    })
+    mediaCol.appendChild(carousel)
   }
 
+  inner.appendChild(textCol)
+  inner.appendChild(mediaCol)
   section.appendChild(inner)
   return section
 }
 
-function createNavGroup(year: number, entries: TimelineEntry[]): HTMLLIElement {
+function createNavGroup(year: number, groups: SeasonGroup[]): HTMLLIElement {
   const li = document.createElement('li')
   li.className = 'nav-group'
 
@@ -103,11 +265,11 @@ function createNavGroup(year: number, entries: TimelineEntry[]): HTMLLIElement {
   const ul = document.createElement('ul')
   ul.className = 'nav-group-links collapsed'
 
-  for (const entry of entries) {
+  for (const group of groups) {
     const pageLi = document.createElement('li')
     const a = document.createElement('a')
-    a.href = `#${entryId(entry)}`
-    a.textContent = navLabel(entry)
+    a.href = `#${groupId(group)}`
+    a.textContent = navLabel(group, groups)
     pageLi.appendChild(a)
     ul.appendChild(pageLi)
   }
@@ -125,25 +287,23 @@ export function renderStoryPages(): void {
   const navList = document.querySelector('#sidebar nav > ul')
   const closingNavLink = navList ? navList.children[navList.children.length - 1] : null
 
-  // Group entries by year
-  const yearGroups = new Map<number, TimelineEntry[]>()
-  for (const entry of timeline) {
-    const group = yearGroups.get(entry.year) ?? []
-    group.push(entry)
-    yearGroups.set(entry.year, group)
-  }
+  const seasonGroups = groupBySeason(timeline)
 
-  let colorIndex = 0
+  const yearNavGroups = new Map<number, SeasonGroup[]>()
 
-  for (const [year, entries] of yearGroups) {
-    for (const entry of entries) {
-      const section = createPageSection(entry, colorIndex)
-      closingSection.parentElement?.insertBefore(section, closingSection)
-      colorIndex++
-    }
+  seasonGroups.forEach((group, index) => {
+    const isReversed = index % 2 === 1
+    const section = createPageSection(group, isReversed)
+    closingSection.parentElement?.insertBefore(section, closingSection)
 
+    const arr = yearNavGroups.get(group.year) ?? []
+    arr.push(group)
+    yearNavGroups.set(group.year, arr)
+  })
+
+  for (const [year, groups] of yearNavGroups) {
     if (navList && closingNavLink) {
-      const navGroup = createNavGroup(year, entries)
+      const navGroup = createNavGroup(year, groups)
       navList.insertBefore(navGroup, closingNavLink)
     }
   }
