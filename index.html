@@ -1,52 +1,236 @@
-<!DOCTYPE HTML>
-<!--
- Hyperspace by HTML5 UP
- html5up.net | @ajlkn
- Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
- <head>
- <title>Valentine's Day 2018</title>
- <meta charset="utf-8" />
- <meta name="viewport" content="width=device-width, initial-scale=1" />
- <link rel="stylesheet" href="assets/css/main.css" />
- <link rel="import" href="sections/intro.html">
- <link rel="import" href="sections/prepano.html">
- <link rel="import" href="sections/pano.html">
- <link rel="import" href="sections/finsta.html">
- <link rel="import" href="sections/now.html">
- </head>
- </head>
- </head>
- <body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Valentine's Day</title>
+  <link rel="icon" type="image/png" href="/images/heart3.png" />
+</head>
+<body class="is-loading">
 
- <!-- Sidebar -->
- <section id="sidebar">
- <div class="inner">
-     <img id="heart-sidebar" src="assets/icons/png/heart3.png"></img>
-     <br></br>
- <nav>
- <ul>
- <li><a data-section="intro" href="#">Introduction</a></li>
- <li><a data-section="prepano" href="#">Pre-Pano</a></li>
- <li><a data-section="pano" href="#">Panorama 2017</a></li>
- <li><a data-section="finsta" href="#">The Finsta</a></li>
- <li><a data-section="now" href="#">New York City, Philly, D.C.</a></li>
- </ul>
- </nav>
- </div>
- </section>
+  <!-- Sidebar -->
+  <section id="sidebar">
+    <div class="inner">
+      <img id="heart-sidebar" src="/images/heart3.png" alt="Heart" />
+      <br>
+      <nav>
+        <ul>
+          <li><a href="#opening">Welcome</a></li>
+          <li class="nav-group-label">2018</li>
+          <li><a href="#intro">Introduction</a></li>
+          <li><a href="#prepano">Pre-Pano</a></li>
+          <li><a href="#pano">Panorama 2017</a></li>
+          <li><a href="#finsta">The Finsta</a></li>
+          <li><a href="#now-2018">New York City, Philly, D.C.</a></li>
+          <li class="nav-group-label">Since Then</li>
+          <li><a href="#timeline">Our Timeline</a></li>
+          <li><a href="#closing">Now</a></li>
+        </ul>
+      </nav>
+    </div>
+  </section>
 
- <!-- Wrapper -->
- <div id="wrapper"> </div>
+  <!-- Wrapper -->
+  <div id="wrapper">
 
- <!-- Scripts -->
- <script>window.$ = window.jQuery = require('./assets/js/jquery.min.js');</script>
- <script src="assets/js/jquery.scrollex.min.js"></script>
- <script src="assets/js/jquery.scrolly.min.js"></script>
- <script src="assets/js/skel.min.js"></script>
- <script src="assets/js/util.js"></script>
- <script src="assets/js/main.js"></script>
- <script> require('./assets/js/menu')</script>
- </body>
+    <!-- ============================================ -->
+    <!-- 2026 OPENING                                 -->
+    <!-- ============================================ -->
+    <section id="opening" class="wrapper style1 fullscreen">
+      <div class="inner">
+        <h2>Welcome Back</h2>
+        <p>
+          <!-- TODO: Jeff writes the opening here -->
+          In 2018, from a tiny apartment in Madrid, I built you something. It was messy, it was my first real project in HTML and CSS, and it was entirely for you. That version still lives here — a time capsule from when we were six months in and I was too far away to say any of this in person.
+          <br><br>
+          But this isn't just a time capsule anymore. It's a living thing now — our story, year by year, that we can always come back to and keep building on.
+          <br><br>
+          Scroll down to revisit where it all started. Then keep going.
+        </p>
+        <ul class="actions">
+          <li><a href="#intro" class="button">Open the Time Capsule</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- 2018 TIME CAPSULE                            -->
+    <!-- ============================================ -->
+
+    <!-- Intro (2018) -->
+    <section id="intro" class="wrapper style1 fullscreen intro">
+      <div class="inner">
+        <br>
+        <h2>Happy Valentine's Day, Michelle!</h2>
+        <br>
+        <p>I know you want me to actively see the world while I'm in Spain and I know we said a simple Valentine's Day thing would be fine, but I wanted to do this for you anyway... This may sound a little weird and unconventional, but I've working on this short app for the past few weeks in order to compile the many great memories we have together and remind you of how <b>awesome</b> you are. It may not be as tangible as handwritten, heartfelt letters, but I hope you like it! &#x2764;
+        </p>
+        <p><b>Jeff</b></p>
+        <ul class="actions">
+          <li><a href="#prepano" class="button">Once upon a time...</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Pre-Panorama -->
+    <section id="prepano" class="wrapper style2 spotlights">
+      <label class="switch">
+        <input id="toggle" type="checkbox">
+        <span class="slider round"></span>
+        <span class="toggle-label"> See Bougie Background </span>
+      </label>
+      <div id="prepano-header">
+        <h2>Pre-Panorama</h2>
+        <p>From the day we got into Descartes' Meditations and "Excellent Sheep" in a ShakeShack at Grand Central, I got this feeling that I had stumbled on someone special that I had initially misjudged; I wanted to really get to know you. Starting from the moment I finally had the courage to message you directly, this section of the app is dedicated to our pre-pano days before we both "knew" and before the only places we had seen together were those in the radius of 415 Madison Ave. </p>
+      </div>
+      <div id="groupme" class="pic">
+        <img src="/images/groupme.png" class="pic-image" alt="GroupMe conversation">
+        <span class="pic-caption top-to-bottom">
+          <h1 class="pic-title">"Are you alive?"</h1>
+          <p> As a member of intern island, I had to find a source of entertainment in the office. With Maddie and Bernie quietly dying of boredom and Emmanuel concentrating for hours on end, I oftentimes ended up being pretty jealous of everyone at the long tables - with sexist-joke debates, and weird-but-obvious-flirting (don't worry I forgive you), I couldn't help but feel like I was missing out. On one particular day though, things weren't as lively as usual and as I looked over to the area, I didn't see the Pret bag, didn't hear the short heel sandals or incredibly noticeable laugh (sorry but it's true b) - you weren't there &#x1F615;. The office just wasn't the same without our intern leader and I eventually saw it as the perfect excuse to personally message you for once.</p>
+        </span>
+      </div>
+      <div id="philandfun" class="pic">
+        <img src="/images/philandfun.jpg" class="pic-image" alt="Philosophy and Fun">
+        <span class="pic-caption top-to-bottom">
+          <h1 class="pic-title">Philosophy and Fun</h1>
+          <p> Reflecting on the breadth of our conversations - from the classic 'I swear I'm not that bougie' remarks and Greg shenanigans to the deeper intellectual debates about our philosophical values and beliefs - I'm not surprised that we do a pretty good job communicating today. While I was definitely just trying to find an excuse to talk to you in the beginning, I never really felt the need to think through each and every text or even hesitate to talk about difficult topics with you; I just wanted to talk to you as much as I could. Regardless of how long we had known each other, talking to you was (and continues to be) my favorite combination of comical and enlightening.</p>
+        </span>
+      </div>
+      <div id="points" class="pic">
+        <img src="/images/points.png" class="pic-image" alt="Points system">
+        <span class="pic-caption top-to-bottom">
+          <h1 class="pic-title">Do I get points for that?</h1>
+          <p> We may have started off with your points system (which was clearly rigged but okay), I like to believe that we were prety wholesome to begin with and that I wasn't just talking to you because you were cute and worked at ERA (though let's be real that was the intial reason). This picture serves as just a snippet into, what I like to call, our "wow my heart" moments, and as proof that I wasn't really in the game for the points - I meant every cheesy pickup line, wholesome comment and kinda-funny joke &#x1f618;. </p>
+        </span>
+      </div>
+      <div id="rob" class="pic">
+        <img src="/images/rob.jpg" class="pic-image" alt="Rob">
+        <span class="pic-caption top-to-bottom">
+          <h1 class="pic-title">Sleeping Beauty</h1>
+          <p> Here's my favorite picture of Rob just because this layout looks better with it here &#x1f602;.
+          </p>
+        </span>
+      </div>
+      <div id="whetherornot" class="pic">
+        <img src="/images/no_pano.jpg" class="pic-image" alt="Whether or not">
+        <span class="pic-caption top-to-bottom">
+          <h1 class="pic-title">Whether or Not Pano Happened</h1>
+          <p> The closer we got to Panorama (and I was confident it was going to happen even though we didn't find out until the day before) the more I started thinking about 'us' as a real possibility. I knew I wanted something real rather than some fling, but I couldn't help but be a little hesitant - "What if she strictly wants something short-term? How is it even going to work for like a month? Ugh long distance sucks anyway so maybe I'm overexagerrating and should just say fuck it..." I told myself. Nevertheless, I don't think that pano was the only reason we happened, but only really served as one road to the same intersection. And even though I'm usually awful with directions, you and I both knew what was going to happen after a certain point...</p>
+        </span>
+      </div>
+      <ul class="actions">
+        <li><a href="#pano" class="button">Shoutout to Pooja Though</a></li>
+      </ul>
+    </section>
+
+    <!-- Panorama 2017 -->
+    <section id="pano" class="wrapper fullscreen">
+      <div id="pano-header">
+        <h2>Panorama 2017</h2>
+        <p> Thanks to your <b>bravery</b>, and I really do have to give you credit for being as bold as you were, I will never forget the summer of 2017. I didn't even think about the fact that I wasn't getting paid at ERA before answering your GroupMe message asking if anyone would be down for a ticket to Pano - I could only fantasize about the amount of time we would spending together and the things I would have the courage to say thanks to the alcohol (lol). I know that I daydream a lot, but replaying that day from start to finish has to be one of my all-time favorites.
+          <br><br>
+          So much had happened that one day that retelling every detail would be exhausting, but so much of it stands out to me: my heart racing the moment you stepped into Matt's room in Lipton Hall, you bursting into laughter and confessing that I was "cute columbia boy", the bold hand-holding shortly before our ferry ride, Maddie and Brian's judgmental faces thereafter, trippy art lab theater kiss, laying on the grass and confessing to me that you were "becoming the type of girl you hate", the mediocre sushi burrito, the Tame Impala hug, getting Maddie's "lol im in my bed" text, you asking your roommate if I can stay over (lol again) and me ultimately texting you when I got home.
+          <br><br>
+          As we near 7 months since this day, I cherish every bit of this story (despite it being fuzzy at times) and hope it'll continue to be our gem for long long time.  </p>
+      </div>
+      <ul class="actions">
+        <li><a href="#finsta" class="button">@maple_mima</a></li>
+      </ul>
+    </section>
+
+    <!-- The Finsta -->
+    <section id="finsta" class="wrapper style2 spotlights">
+      <div id="finsta-header">
+        <br>
+        <h2>The Finsta</h2>
+        <p> This section was originally going to be dedicated to our superdates - titled "Superdates, Truth Sessions and Tons of Grass" - but I thought I'd take a step back and talk less about us and more about, well, <b>you</b>. I wanted to do this both because I didn't have enough photos of our superdates that weren't in DUMBO (yikes) and because in light of recent events I wanted to remind you that the girl I fell in love with is <b>strong and independent</b> with or without me.
+          <br><br>
+          As ironic as it sounds, you've taught me immensely about making the most of New York City; you are unafraid to take random routes home, discover new places without planning to, to go to museums and events alone, or to have conversations about income inequality with strangers at Henri Bendel. <b> You are <i> my </i> inspiration </b>; please never forget that.
+          Below are a few of my favorite finsta posts that truly gave me a glimpse of the same light-hearted, yet meaningful, depth of character that caught my eye at Grand Central. </p>
+        <p id="quote"><i> I hope to remain that "someone who [you] can sit around and talk about CS theory or philosophy with but also laugh over random meaningless shit with."</i></p>
+      </div>
+      <div class="w3-content" style="max-width:1200px">
+        <div id="slide-container">
+          <img class="mySlides" src="/images/finsta_1.jpg" alt="Finsta post 1">
+          <img class="mySlides" src="/images/finsta_2.jpg" alt="Finsta post 2">
+          <img class="mySlides" src="/images/finsta_3.jpg" alt="Finsta post 3">
+          <img class="mySlides" src="/images/finsta_4.jpg" alt="Finsta post 4">
+          <img class="mySlides" src="/images/finsta_5.jpg" alt="Finsta post 5">
+          <div class="overlay">
+            <p class="text"></p>
+          </div>
+        </div>
+        <div class="w3-row-padding w3-section">
+          <div class="w3-col s4">
+            <img class="finsta demo w3-opacity w3-hover-opacity-off" src="/images/finsta_1.jpg" alt="Thumbnail 1">
+          </div>
+          <div class="w3-col s4">
+            <img class="finsta demo w3-opacity w3-hover-opacity-off" src="/images/finsta_2.jpg" alt="Thumbnail 2">
+          </div>
+          <div class="w3-col s4">
+            <img class="finsta demo w3-opacity w3-hover-opacity-off" src="/images/finsta_3.jpg" alt="Thumbnail 3">
+          </div>
+          <div class="w3-col s4">
+            <img class="finsta demo w3-opacity w3-hover-opacity-off" src="/images/finsta_4.jpg" alt="Thumbnail 4">
+          </div>
+          <div class="w3-col s4">
+            <img class="finsta demo w3-opacity w3-hover-opacity-off" src="/images/finsta_5.jpg" alt="Thumbnail 5">
+          </div>
+        </div>
+      </div>
+      <ul class="actions">
+        <li><a href="#now-2018" class="button">...and I'm still here</a></li>
+      </ul>
+    </section>
+
+    <!-- Now (2018 Original Closing) -->
+    <section id="now-2018" class="wrapper fullscreen">
+      <div id="now-header">
+        <h2>Now</h2>
+        <p>Working through this app I still can't believe it's been only six and half months since we've started dating; I've already <b>learned so much</b> and built so many memories I will never forget. Whether it be in New York City, Philly or D.C., every minute I've spent with you has felt like a dream I hope to keep re-living.
+          <br><br>
+          With this project, I knew that I was realistically in way over my head, considering I have never really worked on anything substantial in HTML/CSS/JS, but I'm confident that it was worth every single line of code, late night and slight lie about why I was so busy (I have barely done anything for my classes except go to them lol).
+          <br><br>
+          I hope you liked it and I hope you haven't cried (too much?) because even though this was a fairly productive use of my time, <b>I truly just wanted to do everything in my power to make you happy</b> while I was away. It was either this or asking Navid-the-meme to do my dirty work and deliver flowers, chocolates or some present haha.
+          <br><br>
+          <b><i>I love you b.</i></b></p>
+      </div>
+      <ul class="actions">
+        <li><a href="#timeline" class="button">What happened next...</a></li>
+      </ul>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- SINCE THEN — TIMELINE                        -->
+    <!-- ============================================ -->
+    <section id="timeline" class="wrapper style2 spotlights">
+      <div id="timeline-header">
+        <h2>Since Then</h2>
+        <p>That was 2018. Here's what came after.</p>
+      </div>
+      <!-- Timeline cards rendered here by src/timeline.ts -->
+      <div id="timeline-cards"></div>
+      <ul class="actions">
+        <li><a href="#closing" class="button">And now...</a></li>
+      </ul>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- 2026 CLOSING                                 -->
+    <!-- ============================================ -->
+    <section id="closing" class="wrapper style1 fullscreen">
+      <div class="inner">
+        <h2>Now</h2>
+        <p>
+          <!-- TODO: Jeff writes the closing here -->
+          Eight years later, and I'm still here. Still building things for you.
+        </p>
+      </div>
+    </section>
+
+  </div>
+
+  <script type="module" src="/src/main.ts"></script>
+</body>
 </html>
