@@ -4,6 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Valentine's Day</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="icon" type="image/png" href="/images/heart3.png" />
 </head>
 <body class="is-loading">
@@ -16,14 +19,20 @@
       <nav>
         <ul>
           <li><a href="#opening">Welcome</a></li>
-          <li class="nav-group-label">2018</li>
-          <li><a href="#intro">Introduction</a></li>
-          <li><a href="#prepano">Pre-Pano</a></li>
-          <li><a href="#pano">Panorama 2017</a></li>
-          <li><a href="#finsta">The Finsta</a></li>
-          <li><a href="#now-2018">New York City, Philly, D.C.</a></li>
-          <li class="nav-group-label">Since Then</li>
-          <li><a href="#timeline">Our Timeline</a></li>
+          <li class="nav-group">
+            <button class="nav-group-toggle" aria-expanded="false">
+              <span>2018</span>
+              <svg class="nav-chevron" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="1,1 5,5 9,1"/></svg>
+            </button>
+            <ul class="nav-group-links collapsed">
+              <li><a href="#intro">Introduction</a></li>
+              <li><a href="#prepano">Pre-Pano</a></li>
+              <li><a href="#pano">Panorama 2017</a></li>
+              <li><a href="#finsta">The Finsta</a></li>
+              <li><a href="#now-2018">NYC, Philly, D.C.</a></li>
+            </ul>
+          </li>
+          <!-- Year groups for 2019–2026 injected here by story-renderer.ts -->
           <li><a href="#closing">Now</a></li>
         </ul>
       </nav>
@@ -59,6 +68,7 @@
 
     <!-- Intro (2018) -->
     <section id="intro" class="wrapper style1 fullscreen intro">
+      <span class="bg-caption">Philadelphia skyline at dusk</span>
       <div class="inner">
         <br>
         <h2>Happy Valentine's Day, Michelle!</h2>
@@ -74,6 +84,7 @@
 
     <!-- Pre-Panorama -->
     <section id="prepano" class="wrapper style2 spotlights">
+      <span class="bg-caption">Wine glasses on a pink tablecloth</span>
       <label class="switch">
         <input id="toggle" type="checkbox">
         <span class="slider round"></span>
@@ -84,28 +95,28 @@
         <p>From the day we got into Descartes' Meditations and "Excellent Sheep" in a ShakeShack at Grand Central, I got this feeling that I had stumbled on someone special that I had initially misjudged; I wanted to really get to know you. Starting from the moment I finally had the courage to message you directly, this section of the app is dedicated to our pre-pano days before we both "knew" and before the only places we had seen together were those in the radius of 415 Madison Ave. </p>
       </div>
       <div id="groupme" class="pic">
-        <img src="/images/groupme.png" class="pic-image" alt="GroupMe conversation">
+        <img src="/images/time-capsule/groupme.png" class="pic-image" alt="GroupMe conversation">
         <span class="pic-caption top-to-bottom">
           <h1 class="pic-title">"Are you alive?"</h1>
           <p> As a member of intern island, I had to find a source of entertainment in the office. With Maddie and Bernie quietly dying of boredom and Emmanuel concentrating for hours on end, I oftentimes ended up being pretty jealous of everyone at the long tables - with sexist-joke debates, and weird-but-obvious-flirting (don't worry I forgive you), I couldn't help but feel like I was missing out. On one particular day though, things weren't as lively as usual and as I looked over to the area, I didn't see the Pret bag, didn't hear the short heel sandals or incredibly noticeable laugh (sorry but it's true b) - you weren't there &#x1F615;. The office just wasn't the same without our intern leader and I eventually saw it as the perfect excuse to personally message you for once.</p>
         </span>
       </div>
       <div id="philandfun" class="pic">
-        <img src="/images/philandfun.jpg" class="pic-image" alt="Philosophy and Fun">
+        <img src="/images/time-capsule/philandfun.jpg" class="pic-image" alt="Philosophy and Fun">
         <span class="pic-caption top-to-bottom">
           <h1 class="pic-title">Philosophy and Fun</h1>
           <p> Reflecting on the breadth of our conversations - from the classic 'I swear I'm not that bougie' remarks and Greg shenanigans to the deeper intellectual debates about our philosophical values and beliefs - I'm not surprised that we do a pretty good job communicating today. While I was definitely just trying to find an excuse to talk to you in the beginning, I never really felt the need to think through each and every text or even hesitate to talk about difficult topics with you; I just wanted to talk to you as much as I could. Regardless of how long we had known each other, talking to you was (and continues to be) my favorite combination of comical and enlightening.</p>
         </span>
       </div>
       <div id="points" class="pic">
-        <img src="/images/points.png" class="pic-image" alt="Points system">
+        <img src="/images/time-capsule/points.png" class="pic-image" alt="Points system">
         <span class="pic-caption top-to-bottom">
           <h1 class="pic-title">Do I get points for that?</h1>
           <p> We may have started off with your points system (which was clearly rigged but okay), I like to believe that we were prety wholesome to begin with and that I wasn't just talking to you because you were cute and worked at ERA (though let's be real that was the intial reason). This picture serves as just a snippet into, what I like to call, our "wow my heart" moments, and as proof that I wasn't really in the game for the points - I meant every cheesy pickup line, wholesome comment and kinda-funny joke &#x1f618;. </p>
         </span>
       </div>
       <div id="rob" class="pic">
-        <img src="/images/rob.jpg" class="pic-image" alt="Rob">
+        <img src="/images/time-capsule/rob.jpg" class="pic-image" alt="Rob">
         <span class="pic-caption top-to-bottom">
           <h1 class="pic-title">Sleeping Beauty</h1>
           <p> Here's my favorite picture of Rob just because this layout looks better with it here &#x1f602;.
@@ -113,7 +124,7 @@
         </span>
       </div>
       <div id="whetherornot" class="pic">
-        <img src="/images/no_pano.jpg" class="pic-image" alt="Whether or not">
+        <img src="/images/time-capsule/no_pano.jpg" class="pic-image" alt="Whether or not">
         <span class="pic-caption top-to-bottom">
           <h1 class="pic-title">Whether or Not Pano Happened</h1>
           <p> The closer we got to Panorama (and I was confident it was going to happen even though we didn't find out until the day before) the more I started thinking about 'us' as a real possibility. I knew I wanted something real rather than some fling, but I couldn't help but be a little hesitant - "What if she strictly wants something short-term? How is it even going to work for like a month? Ugh long distance sucks anyway so maybe I'm overexagerrating and should just say fuck it..." I told myself. Nevertheless, I don't think that pano was the only reason we happened, but only really served as one road to the same intersection. And even though I'm usually awful with directions, you and I both knew what was going to happen after a certain point...</p>
@@ -126,6 +137,7 @@
 
     <!-- Panorama 2017 -->
     <section id="pano" class="wrapper fullscreen">
+      <span class="bg-caption">Panorama Music Festival, Randall's Island</span>
       <div id="pano-header">
         <h2>Panorama 2017</h2>
         <p> Thanks to your <b>bravery</b>, and I really do have to give you credit for being as bold as you were, I will never forget the summer of 2017. I didn't even think about the fact that I wasn't getting paid at ERA before answering your GroupMe message asking if anyone would be down for a ticket to Pano - I could only fantasize about the amount of time we would spending together and the things I would have the courage to say thanks to the alcohol (lol). I know that I daydream a lot, but replaying that day from start to finish has to be one of my all-time favorites.
@@ -141,6 +153,7 @@
 
     <!-- The Finsta -->
     <section id="finsta" class="wrapper style2 spotlights">
+      <span class="bg-caption">Finsta memories, @maple_mima</span>
       <div id="finsta-header">
         <br>
         <h2>The Finsta</h2>
@@ -152,30 +165,30 @@
       </div>
       <div class="w3-content" style="max-width:1200px">
         <div id="slide-container">
-          <img class="mySlides" src="/images/finsta_1.jpg" alt="Finsta post 1">
-          <img class="mySlides" src="/images/finsta_2.jpg" alt="Finsta post 2">
-          <img class="mySlides" src="/images/finsta_3.jpg" alt="Finsta post 3">
-          <img class="mySlides" src="/images/finsta_4.jpg" alt="Finsta post 4">
-          <img class="mySlides" src="/images/finsta_5.jpg" alt="Finsta post 5">
+          <img class="mySlides" src="/images/time-capsule/finsta_1.jpg" alt="Finsta post 1">
+          <img class="mySlides" src="/images/time-capsule/finsta_2.jpg" alt="Finsta post 2">
+          <img class="mySlides" src="/images/time-capsule/finsta_3.jpg" alt="Finsta post 3">
+          <img class="mySlides" src="/images/time-capsule/finsta_4.jpg" alt="Finsta post 4">
+          <img class="mySlides" src="/images/time-capsule/finsta_5.jpg" alt="Finsta post 5">
           <div class="overlay">
             <p class="text"></p>
           </div>
         </div>
         <div class="w3-row-padding w3-section">
           <div class="w3-col s4">
-            <img class="finsta demo w3-opacity w3-hover-opacity-off" src="/images/finsta_1.jpg" alt="Thumbnail 1">
+            <img class="finsta demo w3-opacity w3-hover-opacity-off" src="/images/time-capsule/finsta_1.jpg" alt="Thumbnail 1">
           </div>
           <div class="w3-col s4">
-            <img class="finsta demo w3-opacity w3-hover-opacity-off" src="/images/finsta_2.jpg" alt="Thumbnail 2">
+            <img class="finsta demo w3-opacity w3-hover-opacity-off" src="/images/time-capsule/finsta_2.jpg" alt="Thumbnail 2">
           </div>
           <div class="w3-col s4">
-            <img class="finsta demo w3-opacity w3-hover-opacity-off" src="/images/finsta_3.jpg" alt="Thumbnail 3">
+            <img class="finsta demo w3-opacity w3-hover-opacity-off" src="/images/time-capsule/finsta_3.jpg" alt="Thumbnail 3">
           </div>
           <div class="w3-col s4">
-            <img class="finsta demo w3-opacity w3-hover-opacity-off" src="/images/finsta_4.jpg" alt="Thumbnail 4">
+            <img class="finsta demo w3-opacity w3-hover-opacity-off" src="/images/time-capsule/finsta_4.jpg" alt="Thumbnail 4">
           </div>
           <div class="w3-col s4">
-            <img class="finsta demo w3-opacity w3-hover-opacity-off" src="/images/finsta_5.jpg" alt="Thumbnail 5">
+            <img class="finsta demo w3-opacity w3-hover-opacity-off" src="/images/time-capsule/finsta_5.jpg" alt="Thumbnail 5">
           </div>
         </div>
       </div>
@@ -186,6 +199,7 @@
 
     <!-- Now (2018 Original Closing) -->
     <section id="now-2018" class="wrapper fullscreen">
+      <span class="bg-caption">NYC, Philly &amp; D.C. — our cities</span>
       <div id="now-header">
         <h2>Now</h2>
         <p>Working through this app I still can't believe it's been only six and half months since we've started dating; I've already <b>learned so much</b> and built so many memories I will never forget. Whether it be in New York City, Philly or D.C., every minute I've spent with you has felt like a dream I hope to keep re-living.
@@ -197,29 +211,17 @@
           <b><i>I love you b.</i></b></p>
       </div>
       <ul class="actions">
-        <li><a href="#timeline" class="button">What happened next...</a></li>
+        <li><a href="#story-2019-11-23-2019" class="button">What happened next...</a></li>
       </ul>
     </section>
 
-    <!-- ============================================ -->
-    <!-- SINCE THEN — TIMELINE                        -->
-    <!-- ============================================ -->
-    <section id="timeline" class="wrapper style2 spotlights">
-      <div id="timeline-header">
-        <h2>Since Then</h2>
-        <p>That was 2018. Here's what came after.</p>
-      </div>
-      <!-- Timeline cards rendered here by src/timeline.ts -->
-      <div id="timeline-cards"></div>
-      <ul class="actions">
-        <li><a href="#closing" class="button">And now...</a></li>
-      </ul>
-    </section>
+    <!-- Story pages for 2019–2026 injected here by story-renderer.ts -->
 
     <!-- ============================================ -->
     <!-- 2026 CLOSING                                 -->
     <!-- ============================================ -->
     <section id="closing" class="wrapper style1 fullscreen">
+      <span class="bg-caption">Philadelphia skyline at dusk</span>
       <div class="inner">
         <h2>Now</h2>
         <p>

@@ -9,8 +9,9 @@ export function initTimeline(): void {
     const card = document.createElement('div')
     card.className = 'pic'
 
+    const primaryImage = entry.images[0]
     card.innerHTML = `
-      <img src="/images/timeline/${entry.image}" class="pic-image" alt="${entry.title}">
+      <img src="${primaryImage}" class="pic-image" alt="${entry.title}">
       <span class="pic-caption top-to-bottom">
         <h1 class="pic-title">${entry.year} — ${entry.title}</h1>
         <p>${entry.caption}</p>

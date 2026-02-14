@@ -1,3 +1,5 @@
+import { expandGroupForSection } from './nav-accordion'
+
 export function initScrollSpy(): void {
   const sidebarLinks = document.querySelectorAll<HTMLAnchorElement>(
     '#sidebar nav a[href^="#"]'
@@ -11,14 +13,22 @@ export function initScrollSpy(): void {
 
   let activeLock: string | null = null
 
+  function activateLink(href: string): void {
+    sidebarLinks.forEach((l) => l.classList.remove('active'))
+    const activeLink = document.querySelector<HTMLAnchorElement>(
+      `#sidebar nav a[href="${href}"]`
+    )
+    activeLink?.classList.add('active')
+    expandGroupForSection(href)
+  }
+
   sidebarLinks.forEach((link) => {
     link.addEventListener('click', (e) => {
       e.preventDefault()
       const href = link.getAttribute('href')
       if (!href) return
 
-      sidebarLinks.forEach((l) => l.classList.remove('active'))
-      link.classList.add('active')
+      activateLink(href)
       activeLock = href
 
       const target = document.querySelector<HTMLElement>(href)
@@ -35,12 +45,7 @@ export function initScrollSpy(): void {
       if (activeLock) return
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          const id = '#' + entry.target.id
-          sidebarLinks.forEach((l) => l.classList.remove('active'))
-          const activeLink = document.querySelector<HTMLAnchorElement>(
-            `#sidebar nav a[href="${id}"]`
-          )
-          activeLink?.classList.add('active')
+          activateLink('#' + entry.target.id)
         }
       })
     },
