@@ -3,8 +3,7 @@ import { initAuth } from './auth'
 import { renderStoryPages } from './story-renderer'
 import { initNavAccordion } from './nav-accordion'
 import { initScrollSpy } from './scroll-spy'
-import { initPrepanoToggle } from './prepano-toggle'
-import { initSlideshow } from './slideshow'
+import { initTimeCapsuleCarousels } from './time-capsule'
 
 document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('load', () => {
@@ -15,7 +14,6 @@ document.addEventListener('DOMContentLoaded', () => {
     renderStoryPages()
     initNavAccordion()
     initScrollSpy()
-    initPrepanoToggle()
-    initSlideshow()
+    initTimeCapsuleCarousels()
   })
 })

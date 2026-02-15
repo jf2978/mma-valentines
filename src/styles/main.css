@@ -995,466 +995,15 @@ body.is-loading #sidebar nav ul li {
   text-align: justify;
 }
 
-/* ==========================================================================
-   Section: #intro (2018 time capsule)
-   ========================================================================== */
+/* (Sections #intro and #prepano now use .story-page styles) */
 
-#intro {
-  background-attachment: local;
-  background-image: url('/images/time-capsule/skyline.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  overflow: visible;
-  font-family: "Inter", sans-serif;
-}
+/* (Section #pano now uses .story-page styles) */
 
-#intro h2 {
-  font-style: italic;
-  font-size: 2em;
-  color: var(--color-pink);
-  text-shadow: 0 2px 12px rgba(255, 255, 255, 0.15);
-}
+/* (Pic cards removed — Pre-Pano now uses carousel) */
 
-#intro p {
-  color: var(--color-text-bright);
-  font-size: .85em;
-  text-align: justify;
-  text-shadow: 0 1px 8px rgba(255, 255, 255, 0.1);
-}
+/* (Finsta slideshow removed — now uses carousel) */
 
-/* ==========================================================================
-   Section: #prepano
-   ========================================================================== */
-
-#prepano {
-  background-attachment: local;
-  background-image: url('/images/time-capsule/wine-pink.png');
-  background-size: cover;
-  background-repeat: no-repeat;
-  overflow: auto;
-  font-family: "Inter", sans-serif;
-}
-
-#prepano-header h2 {
-  margin-top: 20px;
-  font-style: italic;
-  font-size: 2em;
-  color: var(--color-pink);
-  text-shadow: 0 2px 12px rgba(255, 255, 255, 0.15);
-  text-align: center;
-}
-
-#prepano-header p {
-  font-size: .85em;
-  margin: 40px;
-  color: var(--color-text-bright);
-  text-align: justify;
-  text-shadow: 0 1px 8px rgba(255, 255, 255, 0.1);
-}
-
-/* ==========================================================================
-   Toggle Switch
-   ========================================================================== */
-
-.switch {
-  position: relative;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin: 1em 0 1em 40px;
-  z-index: 10;
-}
-
-.switch input {
-  display: none;
-}
-
-.slider {
-  position: relative;
-  cursor: pointer;
-  width: 52px;
-  height: 28px;
-  flex-shrink: 0;
-  background-color: #ccc;
-  transition: .4s;
-}
-
-.slider:before {
-  position: absolute;
-  content: "";
-  height: 22px;
-  width: 22px;
-  left: 3px;
-  bottom: 3px;
-  background-color: white;
-  transition: .4s;
-}
-
-input:checked + .slider {
-  background-color: var(--color-pink);
-  opacity: .3;
-}
-
-input:checked ~ .toggle-label {
-  opacity: 0;
-}
-
-input:focus + .slider {
-  box-shadow: 0 0 1px var(--color-pink);
-}
-
-input:checked + .slider:before {
-  transform: translateX(24px);
-}
-
-.slider.round {
-  border-radius: 28px;
-}
-
-.slider.round:before {
-  border-radius: 50%;
-}
-
-.toggle-label {
-  font-size: 12px;
-  white-space: nowrap;
-  font-style: italic;
-  color: var(--color-text-bright);
-}
-
-/* ==========================================================================
-   Section: #pano
-   ========================================================================== */
-
-#pano {
-  background-attachment: local;
-  background-image: url('/images/time-capsule/pano_test.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  overflow: visible;
-  font-family: "Inter", sans-serif;
-}
-
-#pano-header {
-  box-sizing: border-box;
-  width: 825px;
-  max-width: 90%;
-  height: auto;
-  margin: auto;
-  margin-bottom: 250px;
-}
-
-#pano-header h2 {
-  margin-bottom: 45px;
-  text-align: center;
-  font-style: italic;
-  font-size: 2em;
-  color: var(--color-pink);
-  text-shadow: 0 2px 12px rgba(255, 255, 255, 0.15);
-}
-
-#pano-header p {
-  box-sizing: content-box;
-  text-align: justify;
-  color: rgb(255, 255, 255);
-  font-size: .85em;
-  opacity: .4;
-  text-shadow: 0 1px 8px rgba(255, 255, 255, 0.1);
-}
-
-#pano-header p:hover {
-  opacity: 1;
-  font-weight: 500;
-}
-
-/* ==========================================================================
-   Pic Cards
-   ========================================================================== */
-
-.pic {
-  position: relative;
-  overflow: hidden;
-  display: inline-block;
-  margin: 0.75em;
-  backface-visibility: hidden;
-  box-sizing: border-box;
-  border-radius: 0.5em;
-}
-
-#groupme {
-  max-width: 45%;
-  margin: 20px;
-}
-
-#philandfun {
-  max-width: 45%;
-  margin: 10px;
-}
-
-#points {
-  max-width: 90%;
-  margin: 20px 30px 20px 40px;
-}
-
-#whetherornot {
-  max-width: 50%;
-  margin-left: 20px;
-  margin-bottom: 30px;
-}
-
-#rob {
-  max-width: 40%;
-  margin-left: 20px;
-}
-
-#rob p {
-  text-align: center;
-}
-
-.pic-3d {
-  perspective: 500;
-  transform-style: preserve-3d;
-}
-
-.pic-caption {
-  cursor: default;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: var(--color-caption-bg);
-  padding: 10px;
-  text-align: justify;
-  opacity: 0;
-  font-style: italic;
-  color: #ffffff;
-}
-
-.pic-caption p {
-  margin: 25px;
-  font-size: .9vmax;
-}
-
-.pic-image {
-  width: 100%;
-  height: 100%;
-}
-
-.pic:hover .pic-image {
-  transform: scale(1.05);
-}
-
-.pic-title {
-  font-family: "Inter", sans-serif;
-  font-size: 1.75vmax;
-  text-align: center;
-}
-
-a, a:hover,
-.pic .pic-image,
-.pic-caption,
-.pic:hover .pic-caption,
-.pic:hover img {
-  transition: all 0.5s ease;
-}
-
-/* Hover reveal: all directions */
-.pic:hover .bottom-to-top,
-.pic:hover .top-to-bottom,
-.pic:hover .left-to-right,
-.pic:hover .right-to-left,
-.pic:hover .rotate-in,
-.pic:hover .rotate-out,
-.pic:hover .open-up,
-.pic:hover .open-down,
-.pic:hover .open-left,
-.pic:hover .open-right,
-.pic:hover .come-left,
-.pic:hover .come-right {
-  opacity: 1;
-  user-select: none;
-}
-
-/* All caption directions: unified fade-in from position */
-.bottom-to-top,
-.top-to-bottom,
-.left-to-right,
-.right-to-left,
-.rotate-in,
-.rotate-out,
-.open-up,
-.open-down,
-.open-left,
-.open-right,
-.come-left,
-.come-right {
-  top: 0;
-  left: 0;
-}
-
-/* Mobile pic cards */
-@media screen and (max-width: 560px) {
-  .pic {
-    max-width: 400px;
-    max-height: 300px;
-    display: block;
-    margin: 10px auto;
-  }
-}
-
-/* ==========================================================================
-   Finsta Slideshow
-   ========================================================================== */
-
-.w3-content {
-  max-width: 980px;
-  margin: auto;
-}
-
-.w3-row-padding {
-  padding: 0 8px;
-}
-
-.w3-section {
-  display: flex;
-  flex-direction: row;
-  gap: 8px;
-  margin-top: 30px !important;
-  margin-left: 200px;
-  margin-right: 275px;
-}
-
-.w3-col.s4 {
-  width: inherit;
-}
-
-.w3-opacity {
-  opacity: 0.60;
-}
-
-.w3-opacity-off,
-.w3-hover-opacity-off:hover {
-  opacity: 1;
-}
-
-.mySlides {
-  position: absolute;
-  margin-left: 250px;
-  width: 500px;
-  height: 600px;
-  border-radius: 0.5em;
-  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.3);
-}
-
-.overlay {
-  position: relative;
-  left: 250px;
-  height: 600px;
-  width: 500px;
-  transition: .5s ease;
-  background-color: rgba(0, 0, 0, 0.50);
-  border-radius: 0.5em;
-  opacity: 0;
-}
-
-.text {
-  color: white;
-  font-size: 16px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  opacity: 1;
-  font-style: italic;
-  font-family: "Inter", sans-serif;
-}
-
-.overlay:hover {
-  opacity: 1;
-}
-
-.finsta {
-  width: 100px;
-  height: 125px;
-  cursor: pointer;
-  border-radius: 0.35em;
-}
-
-/* ==========================================================================
-   Section: #finsta
-   ========================================================================== */
-
-#finsta {
-  background-attachment: local;
-  background-image: url('/images/time-capsule/finsta_bg2.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-color: transparent;
-  overflow: visible;
-}
-
-#finsta-header {
-  font-family: "Inter", sans-serif;
-}
-
-#finsta-header h2 {
-  font-style: italic;
-  font-size: 2em;
-  color: var(--color-pink);
-  text-shadow: 0 2px 12px rgba(255, 255, 255, 0.15);
-  text-align: center;
-}
-
-#finsta-header p {
-  font-size: .85em;
-  margin: 40px;
-  color: var(--color-text-bright);
-  text-align: justify;
-  text-shadow: 0 1px 8px rgba(255, 255, 255, 0.1);
-}
-
-/* ==========================================================================
-   Section: #now-2018
-   ========================================================================== */
-
-#now-2018 {
-  background-attachment: local;
-  background-image: url('/images/time-capsule/final_bg-min.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  overflow: visible;
-}
-
-#now-header {
-  font-family: "Inter", sans-serif;
-}
-
-#now-header h2 {
-  font-style: italic;
-  font-size: 2em;
-  color: var(--color-pink);
-  text-shadow: 0 2px 12px rgba(255, 255, 255, 0.15);
-  text-align: center;
-}
-
-#now-header p {
-  font-size: .85em;
-  margin: 40px;
-  color: var(--color-text-bright);
-  text-align: justify;
-  text-shadow: 0 1px 8px rgba(255, 255, 255, 0.1);
-}
-
-/* ==========================================================================
-   Button / Action Overrides
-   ========================================================================== */
-
-#prepano .actions,
-#pano .actions,
-#finsta .actions {
-  text-align: center;
-  margin-bottom: 4em;
-}
+/* (Sections #finsta and #now-2018 now use .story-page styles) */
 
 /* ==========================================================================
    Sidebar Title
@@ -1746,6 +1295,53 @@ a, a:hover,
   border-color: transparent !important;
 }
 
+/* Carousel caption overlays (time-capsule slides with hover text) */
+.story-carousel-slide {
+  position: relative;
+}
+
+.story-carousel-overlay {
+  position: absolute;
+  inset: 0;
+  background: var(--color-caption-bg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5em;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  border-radius: 0.75em;
+  pointer-events: none;
+  overflow-y: auto;
+}
+
+.story-carousel-slide.active .story-carousel-overlay {
+  pointer-events: auto;
+}
+
+.story-carousel-slide.active:hover .story-carousel-overlay {
+  opacity: 1;
+}
+
+.story-carousel-overlay-title {
+  font-family: "Inter", sans-serif;
+  font-size: 1.3em;
+  font-weight: bold;
+  color: #ffffff;
+  text-align: center;
+  margin-bottom: 0.5em;
+}
+
+.story-carousel-overlay p {
+  font-size: 0.75em;
+  font-style: italic;
+  color: #ffffff;
+  text-align: center;
+  line-height: 1.6;
+  margin: 0;
+}
+
 @media screen and (max-width: 736px) {
   .story-carousel-slide img,
   .story-carousel-slide video {
@@ -1758,6 +1354,10 @@ a, a:hover,
     width: 36px !important;
     min-width: 36px;
     font-size: 1.5em !important;
+  }
+
+  .story-carousel-overlay p {
+    font-size: 0.65em;
   }
 }
 

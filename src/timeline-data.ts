@@ -31,7 +31,7 @@ export const timeline: TimelineEntry[] = [
     ],
     title: 'Sunsets in New York',
     caption:
-      "...",
+      "It was cute to watch grow to love New York on your own terms. It wasn't a dream anymore and we had all the time in the world to explore it together. There weren't necessarily tons of pictures in this time, but it felt like we had turned a new page together and we were just enjoying ourselves on days like this one.",
   },
   {
     year: 2021,
@@ -43,7 +43,7 @@ export const timeline: TimelineEntry[] = [
     ],
     title: 'Birthday Season',
     caption:
-      "...",
+      "Birthdays always hit hard, and sometimes we can't help but have bittersweet memories going into the end of a year. Like the many things we did around this time, it felt like we were just getting used to each other's rhythms and quirks. ",
   },
   {
     year: 2022,
@@ -101,9 +101,9 @@ export const timeline: TimelineEntry[] = [
     year: 2023,
     date: '10-27-2023',
     images: ['/images/2023/2023-10-27.png', '/images/2023/2023-10-27-2.png', '/images/2023/2023-10-28.png', '/images/2023/2023-11-13.png'],
-    title: 'Falling Again',
+    title: 'Who Dun It?',
     caption:
-      "Every fall I fall for you a little harder. Maybe it's the nostalgia baked into the season, or maybe it's the way you look in that one jacket. Either way, October kept delivering — crisp air, warm drinks, and the comfortable silence of two people who don't need to fill every gap.",
+      "...",
   },
 
   // 2024
@@ -113,23 +113,23 @@ export const timeline: TimelineEntry[] = [
     images: ['/images/2023/2023-12-08.png', '/images/2023/2023-12-08-2.png', '/images/2023/2023-12-31.png', '/images/2024/2024-01-15.png'],
     title: 'New Year Energy',
     caption:
-      "January always carries this quiet momentum — the holidays are behind you but the year is still wide open. We kicked off 2024 with that familiar mix of ambition and contentment, knowing that whatever we built next would be built together.",
+      "...",
   },
   {
     year: 2024,
     date: '02-17-2024',
     images: ['/images/2024/2024-02-17.png', '/images/2024/2024-02-17-2.png'],
-    title: "Valentine's Weekend",
+    title: "Valentine's Day Weekend",
     caption:
-      "By now, Valentine's Day was less about the day itself and more about the weekend around it. We'd turned it into our own little tradition — no scripts, no expectations, just us showing up for each other the way we always do.",
+      "...",
   },
   {
     year: 2024,
     date: '05-31-2024',
     images: ['/images/2024/2024-05-31.png'],
-    title: 'Memorial Day Weekend',
+    title: 'Book of Mima',
     caption:
-      'The unofficial start of summer and we were already ahead of schedule. This was the kind of weekend that reminds you why you work so hard the rest of the year — to earn moments like these, with the one person who makes them worth remembering.',
+      "Even though this was technically for my birthday, it felt like a celebration of us. It was a simple night out - dinner and a show (with a lil treat) - and I wouldn't have changed a thing. Throughout the years I've really learned what it means to 'date your wife (👀)' and how important it is to make time for each other. While I still have plentttyyyyy to get better at in this department, I've come to really appreciate, and yearn for, the simplicity of our quality time together.",
   },
   {
     year: 2024,
@@ -137,7 +137,7 @@ export const timeline: TimelineEntry[] = [
     images: ['/images/2024/2024-06-25.png'],
     title: 'Late June',
     caption:
-      "There's a version of us that exists only in summer — looser, brighter, more willing to say yes to everything. June 2024 brought that version out in full force. No agenda, no obligations, just us and whatever the day decided to bring.",
+      "...",
   },
   {
     year: 2024,
@@ -280,4 +280,5 @@ export const outtakes: string[] = [
   '/images/outtakes/10-19-2021_1634651209.jpeg',
   '/images/outtakes/2023-04-04.JPG',
   '/images/outtakes/2023-04-05.png',
+  '/images/outtakes/fabian-bros-outtake.JPEG',
 ]

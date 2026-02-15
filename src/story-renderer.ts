@@ -80,7 +80,12 @@ function navLabel(group: SeasonGroup, allGroups: SeasonGroup[]): string {
   return group.season
 }
 
-function isVideo(src: string): boolean {
+export interface SlideCaption {
+  title?: string
+  text: string
+}
+
+export function isVideo(src: string): boolean {
   const ext = src.split('.').pop()?.toLowerCase() ?? ''
   return ['mp4', 'mov', 'webm'].includes(ext)
 }
@@ -112,10 +117,11 @@ function createMediaElement(src: string, altText: string): HTMLElement {
 const SLIDE_PERCENT = 78
 const GAP_PERCENT = 2.5
 
-function createCarousel(
+export function createCarousel(
   images: string[],
   altText: string,
   onSlideChange?: (src: string) => void,
+  captions?: SlideCaption[],
 ): HTMLElement {
   const carousel = document.createElement('div')
   carousel.className = 'story-carousel'
@@ -123,12 +129,29 @@ function createCarousel(
   const track = document.createElement('div')
   track.className = 'story-carousel-track'
 
-  for (const src of images) {
+  images.forEach((src, i) => {
     const slide = document.createElement('div')
     slide.className = 'story-carousel-slide'
     slide.appendChild(createMediaElement(src, altText))
+
+    const caption = captions?.[i]
+    if (caption) {
+      const overlay = document.createElement('div')
+      overlay.className = 'story-carousel-overlay'
+      if (caption.title) {
+        const h3 = document.createElement('h3')
+        h3.className = 'story-carousel-overlay-title'
+        h3.textContent = caption.title
+        overlay.appendChild(h3)
+      }
+      const p = document.createElement('p')
+      p.textContent = caption.text
+      overlay.appendChild(p)
+      slide.appendChild(overlay)
+    }
+
     track.appendChild(slide)
-  }
+  })
 
   carousel.appendChild(track)
 
