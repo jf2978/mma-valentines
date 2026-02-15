@@ -3,19 +3,30 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Valentine's Day</title>
+  <title>Mima & Jeff</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital@1&display=swap" rel="stylesheet" />
   <link rel="icon" type="image/png" href="/images/heart3.png" />
 </head>
 <body class="is-loading">
 
+  <!-- Auth Gate -->
+  <div id="auth-gate">
+    <div class="auth-card">
+      <h1>Mima & Jeff</h1>
+      <form id="auth-form">
+        <input type="password" id="auth-input" placeholder="Password" autocomplete="off" />
+        <button type="submit" class="button">Enter</button>
+      </form>
+      <p id="auth-error" hidden>Wrong password</p>
+    </div>
+  </div>
+
   <!-- Sidebar -->
   <section id="sidebar">
     <div class="inner">
-      <img id="heart-sidebar" src="/images/heart3.png" alt="Heart" />
-      <br>
+      <span id="sidebar-title">Mima & Jeff</span>
       <nav>
         <ul>
           <li><a href="#opening">Welcome</a></li>

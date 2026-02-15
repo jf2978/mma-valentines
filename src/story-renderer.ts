@@ -1,4 +1,4 @@
-import { timeline } from './timeline-data'
+import { timeline, outtakes } from './timeline-data'
 import type { TimelineEntry } from './timeline-data'
 
 type Season = 'Winter' | 'Spring' | 'Summer' | 'Fall'
@@ -80,6 +80,35 @@ function navLabel(group: SeasonGroup, allGroups: SeasonGroup[]): string {
   return group.season
 }
 
+function isVideo(src: string): boolean {
+  const ext = src.split('.').pop()?.toLowerCase() ?? ''
+  return ['mp4', 'mov', 'webm'].includes(ext)
+}
+
+function firstImageSrc(sources: string[]): string | null {
+  return sources.find((s) => !isVideo(s)) ?? null
+}
+
+function createMediaElement(src: string, altText: string): HTMLElement {
+  if (isVideo(src)) {
+    const video = document.createElement('video')
+    video.src = src
+    video.muted = true
+    video.loop = true
+    video.playsInline = true
+    video.preload = 'metadata'
+    video.setAttribute('playsinline', '')
+    video.addEventListener('mouseenter', () => video.play())
+    video.addEventListener('mouseleave', () => video.pause())
+    return video
+  }
+  const img = document.createElement('img')
+  img.src = src
+  img.alt = altText
+  img.loading = 'lazy'
+  return img
+}
+
 const SLIDE_PERCENT = 78
 const GAP_PERCENT = 2.5
 
@@ -97,11 +126,7 @@ function createCarousel(
   for (const src of images) {
     const slide = document.createElement('div')
     slide.className = 'story-carousel-slide'
-    const img = document.createElement('img')
-    img.src = src
-    img.alt = altText
-    img.loading = 'lazy'
-    slide.appendChild(img)
+    slide.appendChild(createMediaElement(src, altText))
     track.appendChild(slide)
   }
 
@@ -182,7 +207,7 @@ function createCarousel(
   return carousel
 }
 
-function createPageSection(group: SeasonGroup, isReversed: boolean): HTMLElement {
+function createPageSection(group: SeasonGroup, isReversed: boolean, nextSectionId: string): HTMLElement {
   const section = document.createElement('section')
   section.id = groupId(group)
   section.className = 'wrapper fullscreen story-page'
@@ -197,7 +222,8 @@ function createPageSection(group: SeasonGroup, isReversed: boolean): HTMLElement
 
   const bgOverlay = document.createElement('div')
   bgOverlay.className = 'story-page-bg'
-  bgOverlay.style.backgroundImage = `url('${group.images[0]}')`
+  const bgSrc = firstImageSrc(group.images)
+  if (bgSrc) bgOverlay.style.backgroundImage = `url('${bgSrc}')`
   section.appendChild(bgOverlay)
 
   const inner = document.createElement('div')
@@ -214,19 +240,30 @@ function createPageSection(group: SeasonGroup, isReversed: boolean): HTMLElement
   desc.textContent = group.caption
   textCol.appendChild(desc)
 
+  const cta = document.createElement('a')
+  cta.href = `#${nextSectionId}`
+  cta.className = 'button story-page-cta'
+  cta.textContent = 'Next'
+  cta.addEventListener('click', (e) => {
+    e.preventDefault()
+    document.querySelector(`#${nextSectionId}`)?.scrollIntoView({ behavior: 'smooth' })
+  })
+  textCol.appendChild(cta)
+
   const mediaCol = document.createElement('div')
   mediaCol.className = 'story-page-media'
 
   if (isSingleImage) {
-    const img = document.createElement('img')
-    img.src = group.images[0]
-    img.alt = group.title
-    img.loading = 'lazy'
-    img.className = 'story-page-single-img'
-    mediaCol.appendChild(img)
+    const el = createMediaElement(group.images[0], group.title)
+    el.className = isVideo(group.images[0])
+      ? 'story-page-single-video'
+      : 'story-page-single-img'
+    mediaCol.appendChild(el)
   } else {
     const carousel = createCarousel(group.images, group.title, (src) => {
-      bgOverlay.style.backgroundImage = `url('${src}')`
+      if (!isVideo(src)) {
+        bgOverlay.style.backgroundImage = `url('${src}')`
+      }
     })
     mediaCol.appendChild(carousel)
   }
@@ -293,7 +330,9 @@ export function renderStoryPages(): void {
 
   seasonGroups.forEach((group, index) => {
     const isReversed = index % 2 === 1
-    const section = createPageSection(group, isReversed)
+    const nextGroup = seasonGroups[index + 1]
+    const nextSectionId = nextGroup ? groupId(nextGroup) : 'closing'
+    const section = createPageSection(group, isReversed, nextSectionId)
     closingSection.parentElement?.insertBefore(section, closingSection)
 
     const arr = yearNavGroups.get(group.year) ?? []
@@ -307,4 +346,32 @@ export function renderStoryPages(): void {
       navList.insertBefore(navGroup, closingNavLink)
     }
   }
+
+  if (outtakes.length > 0) {
+    renderOuttakes(closingSection)
+  }
+}
+
+function renderOuttakes(closingSection: Element): void {
+  const inner = closingSection.querySelector('.inner')
+  if (!inner) return
+
+  const btn = document.createElement('button')
+  btn.type = 'button'
+  btn.className = 'button outtakes-toggle'
+  btn.textContent = 'The Outtakes'
+
+  const wrapper = document.createElement('div')
+  wrapper.className = 'outtakes-carousel-wrapper'
+
+  const carousel = createCarousel(outtakes, 'Outtakes')
+  wrapper.appendChild(carousel)
+
+  inner.appendChild(btn)
+  inner.appendChild(wrapper)
+
+  btn.addEventListener('click', () => {
+    const isOpen = wrapper.classList.toggle('open')
+    btn.textContent = isOpen ? 'Hide Outtakes' : 'The Outtakes'
+  })
 }

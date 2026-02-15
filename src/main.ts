@@ -1,4 +1,5 @@
 import './styles/main.css'
+import { initAuth } from './auth'
 import { renderStoryPages } from './story-renderer'
 import { initNavAccordion } from './nav-accordion'
 import { initScrollSpy } from './scroll-spy'
@@ -10,9 +11,11 @@ document.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => document.body.classList.remove('is-loading'), 100)
   })
 
-  renderStoryPages()
-  initNavAccordion()
-  initScrollSpy()
-  initPrepanoToggle()
-  initSlideshow()
+  initAuth(() => {
+    renderStoryPages()
+    initNavAccordion()
+    initScrollSpy()
+    initPrepanoToggle()
+    initSlideshow()
+  })
 })
