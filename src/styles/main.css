@@ -3,14 +3,14 @@
    ========================================================================== */
 
 :root {
-  --color-bg: #312450;
-  --color-pink: rgb(241, 156, 156);
-  --color-accent-purple: #5e42a6;
-  --color-blue-purple: #5052b5;
-  --color-magenta: #b74e91;
+  --color-bg: #1c2b3a;
+  --color-pink: #0ABAB5;
+  --color-accent-purple: #0d9e99;
+  --color-blue-purple: #24718a;
+  --color-magenta: #e07a5f;
   --color-text: rgba(255, 255, 255, 0.55);
   --color-text-bright: rgba(255, 255, 255, 0.85);
-  --color-caption-bg: rgba(254, 190, 132, 0.90);
+  --color-caption-bg: rgba(10, 186, 181, 0.85);
   --sidebar-width: 10.5em;
 }
 
@@ -580,7 +580,7 @@ ul.actions.fit.small li {
 
 .spotlights > section > .image:before {
   transition: opacity 1s ease;
-  background: rgba(49, 36, 80, 0.9);
+  background: rgba(28, 43, 58, 0.9);
   content: '';
   display: block;
   height: 100%;
@@ -652,7 +652,7 @@ body.is-loading .spotlights > section > .content > .inner {
 }
 
 .wrapper.alt {
-  background-color: #261c3e;
+  background-color: #162535;
 }
 
 .wrapper.style1 {
@@ -660,7 +660,7 @@ body.is-loading .spotlights > section > .content > .inner {
 }
 
 .wrapper.style1-alt {
-  background-color: #493382;
+  background-color: #0b8884;
 }
 
 .wrapper.style2 {
@@ -668,7 +668,7 @@ body.is-loading .spotlights > section > .content > .inner {
 }
 
 .wrapper.style2-alt {
-  background-color: #3e4094;
+  background-color: #1d628a;
 }
 
 .wrapper.style3 {
@@ -676,7 +676,7 @@ body.is-loading .spotlights > section > .content > .inner {
 }
 
 .wrapper.style3-alt {
-  background-color: #953d75;
+  background-color: #cc7a64;
 }
 
 .wrapper.fullscreen {
@@ -808,7 +808,7 @@ body.is-loading .wrapper.fade > .inner {
   border: 0;
   color: rgba(255, 255, 255, 0.70);
   display: block;
-  font-size: 0.70em;
+  font-size: 12px;
   font-weight: bold;
   letter-spacing: 0.25em;
   line-height: 1.75;
@@ -838,7 +838,7 @@ body.is-loading .wrapper.fade > .inner {
 
 /* Sidebar underline gradient + effect */
 #sidebar nav a:after {
-  background-image: linear-gradient(to right, #E09397, rgb(238, 24, 24));
+  background-image: linear-gradient(to right, #5ce0db, #0ABAB5);
   transition: max-width 0.2s ease;
   max-width: 0;
 }
@@ -1012,14 +1012,14 @@ body.is-loading #sidebar nav ul li {
   font-style: italic;
   font-size: 2em;
   color: var(--color-pink);
-  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.4);
+  text-shadow: 0 2px 12px rgba(255, 255, 255, 0.15);
 }
 
 #intro p {
   color: var(--color-text-bright);
   font-size: .85em;
   text-align: justify;
-  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+  text-shadow: 0 1px 8px rgba(255, 255, 255, 0.1);
 }
 
 /* ==========================================================================
@@ -1040,7 +1040,7 @@ body.is-loading #sidebar nav ul li {
   font-style: italic;
   font-size: 2em;
   color: var(--color-pink);
-  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.4);
+  text-shadow: 0 2px 12px rgba(255, 255, 255, 0.15);
   text-align: center;
 }
 
@@ -1049,7 +1049,7 @@ body.is-loading #sidebar nav ul li {
   margin: 40px;
   color: var(--color-text-bright);
   text-align: justify;
-  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+  text-shadow: 0 1px 8px rgba(255, 255, 255, 0.1);
 }
 
 /* ==========================================================================
@@ -1150,7 +1150,7 @@ input:checked + .slider:before {
   font-style: italic;
   font-size: 2em;
   color: var(--color-pink);
-  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.4);
+  text-shadow: 0 2px 12px rgba(255, 255, 255, 0.15);
 }
 
 #pano-header p {
@@ -1159,7 +1159,7 @@ input:checked + .slider:before {
   color: rgb(255, 255, 255);
   font-size: .85em;
   opacity: .4;
-  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+  text-shadow: 0 1px 8px rgba(255, 255, 255, 0.1);
 }
 
 #pano-header p:hover {
@@ -1401,7 +1401,7 @@ a, a:hover,
   font-style: italic;
   font-size: 2em;
   color: var(--color-pink);
-  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.4);
+  text-shadow: 0 2px 12px rgba(255, 255, 255, 0.15);
   text-align: center;
 }
 
@@ -1410,7 +1410,7 @@ a, a:hover,
   margin: 40px;
   color: var(--color-text-bright);
   text-align: justify;
-  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+  text-shadow: 0 1px 8px rgba(255, 255, 255, 0.1);
 }
 
 /* ==========================================================================
@@ -1433,7 +1433,7 @@ a, a:hover,
   font-style: italic;
   font-size: 2em;
   color: var(--color-pink);
-  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.4);
+  text-shadow: 0 2px 12px rgba(255, 255, 255, 0.15);
   text-align: center;
 }
 
@@ -1442,7 +1442,7 @@ a, a:hover,
   margin: 40px;
   color: var(--color-text-bright);
   text-align: justify;
-  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+  text-shadow: 0 1px 8px rgba(255, 255, 255, 0.1);
 }
 
 /* ==========================================================================
@@ -1493,9 +1493,9 @@ a, a:hover,
   justify-content: flex-end;
   gap: 0.4em;
   width: 100%;
-  font-size: 0.55em;
+  font-size: 14px;
   font-weight: bold;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.25em;
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.4);
   padding: 0.5em 0;
@@ -1611,14 +1611,14 @@ a, a:hover,
   font-style: italic;
   font-size: 2em;
   color: var(--color-pink);
-  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.4);
+  text-shadow: 0 2px 12px rgba(255, 255, 255, 0.15);
 }
 
 .story-page p {
   color: var(--color-text-bright);
   font-size: .85em;
   text-align: left;
-  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+  text-shadow: 0 1px 8px rgba(255, 255, 255, 0.1);
 }
 
 @media screen and (max-width: 980px) {
@@ -1778,14 +1778,14 @@ a, a:hover,
   font-style: italic;
   font-size: 2em;
   color: var(--color-pink);
-  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.4);
+  text-shadow: 0 2px 12px rgba(255, 255, 255, 0.15);
 }
 
 #closing p {
   color: var(--color-text-bright);
   font-size: .85em;
   text-align: justify;
-  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+  text-shadow: 0 1px 8px rgba(255, 255, 255, 0.1);
 }
 
 /* Outtakes */

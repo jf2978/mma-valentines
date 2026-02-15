@@ -100,7 +100,7 @@ export const timeline: TimelineEntry[] = [
   {
     year: 2023,
     date: '10-27-2023',
-    images: ['/images/2023/2023-10-27.png'],
+    images: ['/images/2023/2023-10-27.png', '/images/2023/2023-10-27-2.png', '/images/2023/2023-10-28.png', '/images/2023/2023-11-13.png'],
     title: 'Falling Again',
     caption:
       "Every fall I fall for you a little harder. Maybe it's the nostalgia baked into the season, or maybe it's the way you look in that one jacket. Either way, October kept delivering — crisp air, warm drinks, and the comfortable silence of two people who don't need to fill every gap.",
@@ -110,7 +110,7 @@ export const timeline: TimelineEntry[] = [
   {
     year: 2024,
     date: '01-15-2024',
-    images: ['/images/2024/2024-01-15.png'],
+    images: ['/images/2023/2023-12-08.png', '/images/2023/2023-12-08-2.png', '/images/2023/2023-12-31.png', '/images/2024/2024-01-15.png'],
     title: 'New Year Energy',
     caption:
       "January always carries this quiet momentum — the holidays are behind you but the year is still wide open. We kicked off 2024 with that familiar mix of ambition and contentment, knowing that whatever we built next would be built together.",
@@ -118,7 +118,7 @@ export const timeline: TimelineEntry[] = [
   {
     year: 2024,
     date: '02-17-2024',
-    images: ['/images/2024/2024-02-17.png'],
+    images: ['/images/2024/2024-02-17.png', '/images/2024/2024-02-17-2.png'],
     title: "Valentine's Weekend",
     caption:
       "By now, Valentine's Day was less about the day itself and more about the weekend around it. We'd turned it into our own little tradition — no scripts, no expectations, just us showing up for each other the way we always do.",
