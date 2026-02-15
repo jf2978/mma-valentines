@@ -23,10 +23,24 @@ export const timeline: TimelineEntry[] = [
     title: "Family Trips",
     caption: "I'm surprised at the the timestamp for this one tbh, but I remember feeling like it was these moments before you moved to New York that really tested us. Even though I had gone abroad and we didn't go to the same college, we were always just a call / bus ride away. This time was harder - everyone was worried about COVID, we were both learning what it meant to work full-time jobs and in our own ways we were both focusing on our family lives. But I remember this VA trip, how it was the first time I met little Zane and how we got a tiny reprieve of it all."
   },
+    {
+    year: 2021,
+    date: '06-26-2021',
+    images: [
+      '/images/2021/2021-06-26.JPEG',
+    ],
+    title: 'Sunsets in New York',
+    caption:
+      "...",
+  },
   {
     year: 2021,
     date: '12-08-2021',
-    images: ['/images/2021/2021-12-08_1638994232.png', '/images/2021/2021-12-08-2.png', '/images/2021/2021-12-08-3.png'],
+    images: [
+      '/images/2021/2021-12-08_1638994232.png',
+      '/images/2021/2021-12-08-2.png',
+      '/images/2021/2021-12-08-3.png'
+    ],
     title: 'Birthday Season',
     caption:
       "...",
@@ -34,8 +48,8 @@ export const timeline: TimelineEntry[] = [
   {
     year: 2022,
     date: '08-25-2022',
-    images: ['/images/2022/2022-08-25.png'],
-    title: 'The Rooftop Core Memory',
+    images: ['/images/2022/2022-08-25.png','/images/2022/2022-05-29.JPEG'],
+    title: 'Core Memories',
     caption:
       "Looking back at this picture, it feels like such a great snapshot of the beginning of our joint life in New York. You may not have loved your Chelsea apartment outright, but none of us will forget that rooftop. Your ability to bring people together and dedication to making a space conducive to genuine in connection is something never ceases to amaze me.",
   },
@@ -46,32 +60,22 @@ export const timeline: TimelineEntry[] = [
       '/images/2022/2022-10-28_1667000000.png',
       '/images/2022/2022-10-28_1667000015.png',
     ],
-    title: 'Costumes & Candlelight',
+    title: 'A Great Gatsby Halloween',
     caption:
-      'October meant costumes, questionable candy choices, and the annual debate over who had the better Halloween outfit (it was obviously me). But underneath all the silliness was something solid — a partnership that could be as goofy as it was genuine.',
+      "Every other picture we took this night we - and I say this with nothing but love - both look horrendous. My biggest fear of going somewhere in costume and looking goofy on Halloween came true - but I do also remember having a ton of fun and all the little laughs we had along the way. While these weren't the first or last mirror selfies we took, I'm a little extra grateful we took these because they capture the kind of goofy, unfiltered moments that make up so much of our life together.",
   },
-
-  // 2023
   {
     year: 2023,
     date: '02-12-2023',
     images: ['/images/2023/2023-02-12_1676228536.png'],
-    title: "Another Valentine's",
+    title: "Gnocchi With a Side of Love",
     caption:
-      "Five years deep and Valentine's Day had evolved from grand gestures to something quieter and more intentional. Not because the spark faded — if anything it burned steadier. We'd learned that showing up every day was the real grand gesture. February just gave us an excuse to say it out loud.",
+      "Our fave, usual and personal corner of NYC. Gnoccheria is such a great encapsulation of who we are and what we've really grown to value as a couple - simple, elegant, delicious, and intimate. I love that we can have a meal together and genuinely always find something to talk about. Never a need to force conversation or get caught up doomscrolling while we wait. And most importantly, once the food comes we agree on the main event for the next like 15 mins (because we eat so fast). Fat child to food-loving, present adults 🤝",
   },
   {
     year: 2023,
     date: '03-07-2023',
-    images: ['/images/2023/2023-03-07_1678214013.png'],
-    title: 'Spring Forward',
-    caption:
-      "That first real warmth after a long winter always makes everything feel possible. We were making plans, dreaming bigger, figuring out what the next chapter looked like. Spring had a way of reminding us that growth wasn't just seasonal — it was constant.",
-  },
-  {
-    year: 2023,
-    date: '03-26-2023',
-    images: [
+    images: ['/images/2023/2023-03-07_1678214013.png',
       '/images/2023/2023-03-26_1679834122.png',
       '/images/2023/2023-03-26_1771040794.png',
       '/images/2023/2023-03-30_1680172552.png',
@@ -79,27 +83,19 @@ export const timeline: TimelineEntry[] = [
       '/images/2023/2023-03-30_1771040794.png',
       '/images/2023/2023-04-01.png',
       '/images/2023/2023-04-04.png',
-      '/images/2023/2023-04-05.png',
+      '/images/2023/2023-04-06.png',
     ],
-    title: 'End of March',
+    title: 'Brave Enough For A New World',
     caption:
-      'Some weeks pack more into them than entire months. This was one of those stretches — spontaneous plans, late-night conversations, and the kind of laughter that makes your stomach hurt. Nothing extraordinary on paper, but unforgettable in practice.',
+      "And all of a sudden, we started to take some leaps and hit our stride travel-wise. Your push to really travel for our newfound shared hobby turned into a Disney World trip I didn't know I wanted. Your stroke of inspiration made Bali happen, led to a beautiful friendship that we didn't even know would pay dividends. On paper, we both made these trips happen, but I know deep down that it was the excitement in your eyesand the infectious energy you had when planning it all is what made it all come together.",
   },
   {
     year: 2023,
     date: '06-01-2023',
-    images: ['/images/2023/2023-06-01.png'],
+    images: ['/images/2023/2023-06-01.png', '/images/2023/2023-06-01-2.png', '/images/2023/2023-07-04.jpeg', '/images/2023/2023-07-31.png'],
     title: 'Summer in the City',
     caption:
-      'June arrived and the city transformed. Rooftops opened up, the days stretched impossibly long, and every block felt like a different neighborhood. The heat made everything move a little slower, which was exactly the pace we needed.',
-  },
-  {
-    year: 2023,
-    date: '07-31-2023',
-    images: ['/images/2023/2023-07-31.png'],
-    title: 'The Last Day of July',
-    caption:
-      "Midsummer has this bittersweet quality — you're in the thick of it but can already feel it slipping. We held on tight to those long July days, knowing the best way to honor a moment is to actually be in it.",
+      'And just like that, New York summer hit us a like a whirlwind. We enjoyed the little things that make New York feel special to us. Sometimes a date night with unforgettable meal, sometimes an impromptu indoor picnic on the 4th of July. All while we had a place we can both call home.',
   },
   {
     year: 2023,
@@ -151,7 +147,7 @@ export const timeline: TimelineEntry[] = [
       '/images/2024/2024-07-24.png',
       '/images/2024/2024-07-25_1771040795.png',
       '/images/2024/2024-07-25_1721926483.MOV',
-      '/images/2024/2024-07-26_1722014568.gif',
+      '/images/2024/2024-07-26_1721995200.gif',
       '/images/2024/2024-07-26_1722014568.MP4',
       '/images/2024/2024-07-27_1722108734.png',
       '/images/2024/2024-07-27_1722112426.png',
@@ -282,4 +278,6 @@ export const outtakes: string[] = [
   '/images/outtakes/07-30-2025_1753892126.png',
   '/images/outtakes/08-07-2024.png',
   '/images/outtakes/10-19-2021_1634651209.jpeg',
+  '/images/outtakes/2023-04-04.JPG',
+  '/images/outtakes/2023-04-05.png',
 ]
